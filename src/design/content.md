@@ -1,21 +1,21 @@
 ## `Contenido`
 
-> Nombre de disco.
+- Nombre de disco.
 
-> Nombre de artista.
+- Nombre de artista.
 
-> Tapas disco.
+- Tapas disco.
 
-> Fotos artista.
+- Fotos artista.
 
-> Listado canciones.
+- Listado canciones.
 
-- Tapa de cada canción
+>- Tapa de cada canción
 
-- Letras de cada canción
+>- Letras de cada canción
 
-- Ficha técnica de cada canción
+>- Ficha técnica de cada canción
 
-- Videos relacionados con cada canción
+>- Videos relacionados con cada canción
 
-> Links a redes para escuchar el disco y redes sociales.
+- Links a redes para escuchar el disco y redes sociales.
