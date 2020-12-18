@@ -6,7 +6,6 @@ import LogoVandera from '../design/img/vanderalogo.svg';
 function Header() {
 
     return (
-        <div className="background">
             <div class='header-container'>
                 <div className="logo-container">
                     <img className="header-logo" src={LogoVandera} alt="logo vandera"/>
@@ -35,7 +34,6 @@ function Header() {
                     </div>
                 </div>
             </div>
-        </div>
     )   
 }
 

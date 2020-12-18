@@ -1,0 +1,24 @@
+.song-container{
+    display: flex;
+    justify-content: space-between;
+    width: 70%;
+    padding: .5rem 0;
+}
+
+.song-name{
+    width: 80%;
+    text-align: left;
+    font-size: 14px;
+}
+
+.song-play-icon{
+    display: flex;
+    justify-content: center;
+    width: 20%;
+}
+
+
+.song-play-icon span{
+    margin-right: 1.5rem;
+    color: rgb(141, 141, 141);
+}

@@ -3,11 +3,11 @@ color: inherit;
 text-decoration: inherit; 
 }
 
-.background{
+/* .background{
     background-image: url('../design/vanderasoloright.jpg');
     background-size: cover;
     height: 100vh;
-}
+} */
 
 .header-container{
     display: flex;
