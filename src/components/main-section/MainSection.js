@@ -11,11 +11,11 @@ const MainSection = () => {
 
                     <div className='container-song-title'>
 
-                        <div className='container-title'>
+                        <div className='title'>
                             <SongsTitleContainer/>
                         </div>
 
-                        <div className='container-songs'>
+                        <div className='songs'>
                             <SongsPlaylistContainer />
                         </div>
                         

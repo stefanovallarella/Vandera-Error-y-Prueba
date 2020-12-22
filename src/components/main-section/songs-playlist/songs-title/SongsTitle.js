@@ -1,7 +1,7 @@
 const SongsTitle = (props) => {
     return (
-        <div className="container-background-title">
-            <div className="container-dynamic-title">
+        <div className="background">
+            <div className="container">
                 <span>{props.title}</span>
                 <div className="hr"></div>
             </div>
