@@ -1,18 +1,8 @@
-import React from 'react';
-
-
-function AboutAlbum() {
-
+const AboutAlbum = () => {
     return (
-            <div>
-                <p>SOBRE EL DISCO</p>
-            </div>
+        <div>
+            <p>SOBRE EL DISCO</p>
+        </div>
     )   
-
 }
-
-
 export default AboutAlbum;
-
-
-

@@ -1,21 +1,8 @@
-import React from 'react';
 import SongsTitle from './SongsTitle';
 
-import '../../../../styles/songs-title-container.css';
-
-
-function SongsTitleContainer() {
-
+const SongsTitleContainer = () => {
     return (
-        
-        <SongsTitle title='CONTINUAR'/>
-
+        <SongsTitle title="CONTINUAR" />
     )   
-
 }
-
-
 export default SongsTitleContainer;
-
-
-

@@ -1,18 +1,8 @@
-import React from 'react';
-
-
-function Player() {
-
+const Player = () => {
     return (
-            <div>
-                <p>AUDIO PLAYER</p>
-            </div>
+        <div>
+            <p>AUDIO PLAYER</p>
+        </div>
     )   
-
 }
-
-
 export default Player;
-
-
-

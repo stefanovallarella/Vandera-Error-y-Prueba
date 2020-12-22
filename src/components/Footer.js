@@ -1,18 +1,8 @@
-import React from 'react';
-
-
-function Footer() {
-
+const Footer = () => {
     return (
-            <div>
-                <p>FOOTER</p>
-            </div>
+        <div>
+            <p>FOOTER</p>
+        </div>
     )   
-
 }
-
-
 export default Footer;
-
-
-

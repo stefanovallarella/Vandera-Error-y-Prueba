@@ -1,40 +1,32 @@
-import React from 'react';
-import '../../styles/main-section.css';
-
 import SongsPlaylistContainer from '../main-section/songs-playlist/SongsPlaylistContainer';
 import SongsTitleContainer from '../main-section/songs-playlist/songs-title/SongsTitleContainer';
+import mainImg from '../../design/vanderasolo.png';
 
-import vanderasolo from '../../design/vanderasolo.png';
-
-function MainSection() {
-
+const MainSection = () => {
     return (
-            <div className='background'>
-                <div className='container'>
+        <section className="block block--hero">
+            <div className="container">
 
-                    <div className="block-container">
-                        <div className='container-song-title'>
-                            <div className='container-title'>
-                                <SongsTitleContainer/>
-                            </div>
-                            <div className='container-songs'>
-                                <SongsPlaylistContainer />
-                            </div>
+                <div className="block__content">
+
+                    <div className='container-song-title'>
+
+                        <div className='container-title'>
+                            <SongsTitleContainer/>
                         </div>
+
+                        <div className='container-songs'>
+                            <SongsPlaylistContainer />
+                        </div>
+                        
                     </div>
 
-
-                    <div>
-                        <img src={vanderasolo} alt='Vandera Solo'/>
-                    </div>
                 </div>
+
+                <img src={mainImg} alt='Vandera Solo' className="block__img" />
+
             </div>
+        </section>
     )   
-
 }
-
-
 export default MainSection;
-
-
-
