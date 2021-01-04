@@ -1,1 +1,2 @@
 export const EXAMPLE_TYPE = 'EXAMPLE_TYPE';
+export const GET_ACTUAL_SONG = 'GET_ACTUAL_SONG';

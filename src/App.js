@@ -36,8 +36,15 @@ function App() {
     
       {/* <audio src={`${trackito.external_urls.spotify}`}></audio> */}
 
-      <Header />
-      <MainSection />
+      <div 
+        style={{
+          /* backgroundColor: 'white' */
+          /* backgroundImage: URL() */
+        }}
+      >
+        <Header />
+        <MainSection />
+      </div>
       <SocialBanner />
       <AboutAlbum />
       <Footer />
