@@ -65,7 +65,7 @@ const MainSection = ( { actualSong } ) => {
 
                 </div>
 
-                { imgSwitch() };
+                { imgSwitch() }
                 {/* <img src={mainImg} alt='Vandera Solo' className="block__img" /> */}
 
             </div>
