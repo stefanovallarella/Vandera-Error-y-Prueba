@@ -1,8 +1,25 @@
+import { useEffect } from 'react';
+import { connect } from 'react-redux';
+
 import SongsTitle from './SongsTitle';
 
-const SongsTitleContainer = () => {
+const SongsTitleContainer = ({ actualSong }) => {
+
+    useEffect(()=>{
+
+    },[actualSong])
+
     return (
-        <SongsTitle title="CONTINUAR" />
+        <SongsTitle title={actualSong.title} />
     )   
 }
-export default SongsTitleContainer;
+
+
+
+const mapStateToProps = state => ({
+
+    actualSong: state.reducers.actualSong
+  
+})
+  
+export default connect(mapStateToProps)(SongsTitleContainer);
