@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import mainM from '../design/img-manchas/error-y-prueba-manchas.png';
+import mainM from '../assets/images/img-manchas/error-y-prueba-manchas.png';
 
 const AboutAlbum = ({actualSong}) => {
     return (

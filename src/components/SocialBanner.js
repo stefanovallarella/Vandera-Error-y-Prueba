@@ -1,9 +1,9 @@
-import logoSpotify from '../design/img/logo-spotify.png'
-import logoYTMusic from '../design/img/logo-yt-music.png'
-import logoAppleMusic from '../design/img/logo-apple-music.png'
-import logoDeezer from '../design/img/logo-deezer.png'
-import logoSoundcloud from '../design/img/logo-soundcloud.png'
-import logoAmazon from '../design/img/logo-amazon.png'
+import logoSpotify from '../assets/images/img/logo-spotify.png'
+import logoYTMusic from '../assets/images/img/logo-yt-music.png'
+import logoAppleMusic from '../assets/images/img/logo-apple-music.png'
+import logoDeezer from '../assets/images/img/logo-deezer.png'
+import logoSoundcloud from '../assets/images/img/logo-soundcloud.png'
+import logoAmazon from '../assets/images/img/logo-amazon.png'
 
 const SocialBanner = () => {
     return (
