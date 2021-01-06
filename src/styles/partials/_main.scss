@@ -109,6 +109,11 @@ body {
 
 .header {
     height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 900;
     .container {
         height: 100%;
         display: flex;
@@ -151,6 +156,8 @@ body {
 }
 
 .block {
+    position: relative;
+    overflow: hidden;
     > .container {
         @include breakpoint(phone) {
             height: 100%;
@@ -159,16 +166,28 @@ body {
             justify-content: center;
         }
     }
+    .block__bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+        opacity: .5;
+    }
     &.block--hero {
         padding-top: 50px;
         @include breakpoint(phone) {
-            overflow: hidden;
             padding-top: 0;
+            height: 100vh;
         }
         > .container {
+            position: relative;
+            z-index: 10;
             @include breakpoint(phone) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
+                height: 100%;
             }
         }
         .block__content {
@@ -182,8 +201,11 @@ body {
             }
         }
         .block__img {
-            max-width: 100%;
-            align-self: flex-end;
+            position: absolute;
+            bottom: 0;
+            max-height: 100%;
+            right: 0;
+            z-index: 1;
         }
     }
     &.block--bottom {

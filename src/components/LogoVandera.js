@@ -9,8 +9,8 @@ const LogoVandera = ({ actualSong }) => {
     },[actualSong])
 
     const colorLogoSwitch = () => {
-      switch(actualSong.mainSectionBg){
-        case 'continuar-manchas.png': return {
+      switch(actualSong.id){
+        case 1: return {
           v: 'rgb(195, 0, 0)',
           a: 'rgb(171, 0, 0)',
           n: 'rgb(145, 2, 2)',
@@ -20,7 +20,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(13, 0, 0)',
           last: 'rgb(0, 0, 0)'
           };
-        case '180grados-manchas.png': return {
+        case 2: return {
           v: 'rgb(19, 184, 0)',
           a: 'rgb(18, 166, 0)',
           n: 'rgb(16, 144, 0)',
@@ -30,7 +30,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(9, 82, 0)',
           last: 'rgb(7, 61, 0)'
           };
-        case 'asi-es-manchas.png': return {
+        case 3: return {
           v: 'rgb(136, 0, 119)',
           a: 'rgb(131, 0, 104)',
           n: 'rgb(90, 0, 79)',
@@ -40,7 +40,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(121, 0, 92)',
           last: 'rgb(90, 0, 95)'
           };
-        case 'cae-la-pared-manchas.png': return {
+        case 4: return {
           v: 'rgb(102, 45, 119)',
           a: 'rgb(60, 21, 73)',
           n: 'rgb(42, 20, 48)',
@@ -50,7 +50,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(96, 41, 113)',
           last: 'rgb(64, 35, 73)'
           };
-        case 'error-y-prueba-manchas.png': return {
+        case 5: return {
           v: 'rgb(107, 0, 119)',
           a: 'rgb(92, 0, 102)',
           n: 'rgb(76, 0, 84)',
@@ -60,7 +60,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(13, 0, 15)',
           last: 'rgb(0, 0, 0)'
           };
-        case 'estoy-bien-manchas.png': return {
+        case 6: return {
           v: 'rgb(169, 33, 59)',
           a: 'rgb(186, 38, 67)',
           n: 'rgb(152, 28, 52)',
@@ -70,7 +70,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(216, 42, 76)',
           last: 'rgb(161, 31, 57)'
           };
-        case 'llamadas-perdidas-manchas.png': return {
+        case 7: return {
           v: 'rgb(184, 37, 142)',
           a: 'rgb(153, 31, 119)',
           n: 'rgb(118, 21, 90)',
@@ -80,7 +80,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(202, 49, 158)',
           last: 'rgb(148, 30, 115)'
           };
-        case 'super-lento-manchas.png': return {
+        case 8: return {
           v: 'rgb(48, 33, 178)',
           a: 'rgb(12, 0, 118)',
           n: 'rgb(11, 0, 110)',
@@ -90,7 +90,7 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(15, 0, 145)',
           last: 'rgb(11, 0, 105)'
           };
-        case 'vietnam-manchas.png': return {
+        case 9: return {
           v: 'rgb(20, 144, 97)',
           a: 'rgb(14, 105, 71)',
           n: 'rgb(11, 74, 50)',
