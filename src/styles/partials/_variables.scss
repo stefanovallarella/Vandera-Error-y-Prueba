@@ -15,8 +15,10 @@ $breakpoints: (
   --color-black: #000000;
   --color-primary: #3613AB;
   --color-secondary: #950AE1;
+  --color-grey: #8A8A8A;
 
   // globals
   --color-text: var(--color-black);
+  --color-text-alt: var(--color-grey);
   --bg-body: var(--color-white);
 }
