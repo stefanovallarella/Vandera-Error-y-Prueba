@@ -1,26 +1,18 @@
-import { useDispatch, connect } from 'react-redux';
+import { connect } from 'react-redux';
 import { selectedSong } from '../../../../actions/index';
 
-
-
-
-const SongItem = (props) => {
-    
-    
-    const dispatch = useDispatch();
+const SongItem = ({song, allSongs, getActualSong}) => {
     
     const getSong = (id) => {
-    
-        props.getActualSong(id);
-
+        getActualSong(id, allSongs);
     }
 
     return (
         <article className="song-container">
-            <div className="name"><strong>{props.song.songName}</strong></div>
+            <div className="name"><strong>{song.songName}</strong></div>
             <div className="play-icon">
                 <span>02:53</span>
-                <button onClick={() => getSong(props.song.id)}>
+                <button onClick={() => getSong(song.id)}>
                     <i className="fas fa-play"></i>
                 </button>
             </div>
@@ -28,13 +20,14 @@ const SongItem = (props) => {
     )   
 }
 
+const mapStateToProps = state => ({
+    allSongs: state.songs.allSongs,
+});
 
 const mapDispatchToProps = (dispatch) => {
     return{
-
-      getActualSong: (id) => dispatch(selectedSong(id))
-
+        getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs))
     }
-  }
+}
 
-export default connect(null, mapDispatchToProps) (SongItem);
+export default connect(mapStateToProps, mapDispatchToProps) (SongItem);

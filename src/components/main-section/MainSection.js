@@ -47,11 +47,8 @@ const MainSection = ( { actualSong } ) => {
     )   
 }
 
-
 const mapStateToProps = state => ({
-
-    actualSong: state.reducers.actualSong
-
-  });
+    actualSong: state.songs.actualSong
+});
 
 export default connect(mapStateToProps)(MainSection);
