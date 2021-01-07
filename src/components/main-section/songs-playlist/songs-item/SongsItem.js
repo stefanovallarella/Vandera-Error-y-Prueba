@@ -8,6 +8,17 @@ const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}
     const myRef = useRef();
     const songMP3 = song.mp3SongUrl;
 
+
+    const toggleSingle = () => {
+        if(button === 'play' && song.id === actualSong.id) {
+            myRef.current.play();
+            setButton('pause');
+        }else{
+            setButton('play');
+            myRef.current.pause();
+        }
+    }
+
     const togglePlay = (id) => {
         getAllPausedSongs(allSongs)
         getActualSong(id, allSongs)
@@ -43,7 +54,7 @@ const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}
                     src={songMP3}
                 />
             
-                <button onClick={() => togglePlay(song.id) }>
+                <button onClick={() => {togglePlay(song.id); toggleSingle();} }>
                     <i className={`fas fa-${button}`}></i>
                 </button>
 

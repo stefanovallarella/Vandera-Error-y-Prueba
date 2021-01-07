@@ -1,6 +1,7 @@
 import { 
     EXAMPLE_TYPE,
-    GET_ACTUAL_SONG
+    GET_ACTUAL_SONG,
+    GET_ALL_SONGS
 } from '../actions/types'
 
 // Img manchas
@@ -131,6 +132,11 @@ const songsReducer = (state = initialState, action) => {
                 ...state,
                 actualSong: action.payload,
             };
+   /*      case GET_ALL_SONGS:
+            return {
+                ...state,
+                allSongs: action.payload,
+            }; */
         default:
             return state;
     }

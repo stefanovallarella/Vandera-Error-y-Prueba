@@ -19,9 +19,8 @@ export const selectedSong = (id, allSongs) => dispatch => {
 
 export const pauseAllSongs = (allSongs) => dispatch => {
 	const allPausedSongs = allSongs.map(song => {
-		return (
-			song.playing = false
-		)
+		return song.playing = false;
+		
 	})
 	dispatch({
 		type: GET_ALL_SONGS,
