@@ -5,7 +5,7 @@ const SongsPlaylistContainer = ( {allSongs} ) => {
     return (
         <div className="playlist-container">
             { allSongs.map((song)=>{
-                return <SongItem song={song} />
+                return <SongItem song={song} key={song.id} />
             })}
         </div>
     )   

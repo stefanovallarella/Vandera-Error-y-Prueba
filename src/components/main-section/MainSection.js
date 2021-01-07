@@ -1,4 +1,4 @@
-import { useDispatch, connect } from 'react-redux';
+import { connect } from 'react-redux';
 
 import SongsPlaylistContainer from '../main-section/songs-playlist/SongsPlaylistContainer';
 import SongsTitleContainer from '../main-section/songs-playlist/songs-title/SongsTitleContainer';
@@ -6,15 +6,7 @@ import SongsTitleContainer from '../main-section/songs-playlist/songs-title/Song
 import mainImg from '../../assets/images/img-vandera/vanderasolo.png';
 import mainM from '../../assets/images/img-manchas/error-y-prueba-manchas.png';
 
-import { useEffect } from 'react';
-
-
 const MainSection = ( { actualSong } ) => {
-
-    useEffect(()=>{
-
-    },[actualSong])
-
     return (
         <section className="block block--hero">
             <div className="container">

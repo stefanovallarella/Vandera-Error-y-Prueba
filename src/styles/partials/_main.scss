@@ -233,13 +233,8 @@ body {
             }
         }
         .block__content {
-            text-align: center;
             .title {
                 margin-bottom: 30px;
-            }
-            .block__logo {
-                margin-bottom: 40px;
-                max-width: 100%;
             }
         }
         .block__img {
@@ -320,56 +315,49 @@ body {
 }
 
 .container-song-title{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
     > .title{
         width: 100%;
         .background {
-            padding: .5rem .5rem 0;
-            width: 80%;
-            .container{
-                color: red;
-                padding-bottom: 1.5rem;
-                padding-top: 1.2rem;
-                width: 50%;
-                margin: 0 auto;
-                span {
-                    font-weight: bold;
-                    font-size: 2rem;
-                    padding-bottom: 1rem;
-                }
-                .hr {
-                    background-color: black;
-                    border: none;
-                    height: 8px;
-                    width: 25px;
-                }
-            }
+            // padding: .5rem .5rem 0;
+            // width: 80%;
+            // .container {
+            //     padding-bottom: 1.5rem;
+            //     padding-top: 1.2rem;
+            //     width: 50%;
+            //     margin: 0 auto;
+            //     span {
+            //         font-weight: bold;
+            //         font-size: 2rem;
+            //         padding-bottom: 1rem;
+            //     }
+            //     .hr {
+            //         background-color: black;
+            //         border: none;
+            //         height: 8px;
+            //         width: 25px;
+            //     }
+            // }
         }
     }
     > .songs{
-        display: flex;
-        justify-content: flex-end;
-        align-items: center;
-        width: 80%;
+        // display: flex;
+        // justify-content: flex-end;
+        // align-items: center;
     }
 
 }
 
 
 .playlist-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
+    width: 75%;
     .song-container {
+        padding: 10px 0;
         display: flex;
         justify-content: space-between;
-        width: 70%;
-        padding: .5rem 0;
+        align-items: center;
         .name {
             width: 80%;
             text-align: left;
@@ -379,10 +367,17 @@ body {
             display: flex;
             justify-content: center;
             width: 20%;
-        span {
-            margin-right: 1.5rem;
-            color: rgb(141, 141, 141);
-        }
+            span {
+                margin-right: 1.5rem;
+                color: rgb(141, 141, 141);
+            }
+            button {
+                background-color: transparent;
+                border: none;
+                padding: 0;
+                outline: none;
+                cursor: pointer;
+            }
         }
     }
 }

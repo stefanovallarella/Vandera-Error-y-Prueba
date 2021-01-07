@@ -1,10 +1,7 @@
 const SongsTitle = (props) => {
     return (
         <div className="background">
-            <div className="container">
-                <span>{props.title}</span>
-                <div className="hr"></div>
-            </div>
+            <h2 class="title title--border">{props.title ? props.title : 'Erroy y Prueba'}</h2>
         </div>
     )   
 }
