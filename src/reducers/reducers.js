@@ -132,11 +132,11 @@ const songsReducer = (state = initialState, action) => {
                 ...state,
                 actualSong: action.payload,
             };
-   /*      case GET_ALL_SONGS:
+/*      case GET_ALL_SONGS:
             return {
                 ...state,
                 allSongs: action.payload,
-            }; */
+        }; */
         default:
             return state;
     }

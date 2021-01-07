@@ -7,6 +7,8 @@ import SocialBanner from './components/SocialBanner';
 import AboutAlbum from './components/AboutAlbum';
 import Footer from './components/Footer';
 
+import AudioPlayer from './components/Player';
+
 const App = () => {
   return (
     <>
@@ -15,6 +17,8 @@ const App = () => {
       <SocialBanner />
       <AboutAlbum />
       <Footer />
+      <AudioPlayer />
+      
     </>
   );
 }
