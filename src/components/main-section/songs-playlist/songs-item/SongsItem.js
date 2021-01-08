@@ -4,56 +4,37 @@ import { selectedSong, pauseAllSongs } from '../../../../actions/index';
 
 const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}) => {
 
-    const [button, setButton] = useState('pause');
-    const myRef = useRef();
-    const songMP3 = song.mp3SongUrl;
-
+    const [button, setButton] = useState('play');
 
     const toggleSingle = () => {
+
         if(button === 'play' && song.id === actualSong.id) {
-            myRef.current.play();
             setButton('pause');
         }else{
             setButton('play');
-            myRef.current.pause();
         }
     }
 
     const togglePlay = (id) => {
         getAllPausedSongs(allSongs)
         getActualSong(id, allSongs)
-        if(song.id === actualSong.id) {
-            getAllPausedSongs(allSongs)
-            setButton('play');
-            myRef.current.pause();
-            console.log(actualSong.title+' Actual song is paused: '+actualSong.playing);
-            console.log(song.title+' Item song is paused: '+song.playing);
-        } else {
-            console.log(actualSong.title+' Actual song is playing: '+actualSong.playing);
-            console.log(song.title+' Item song is playing: '+song.playing);
-        }
     }
 
     useEffect(() => {
-        if(song.playing === actualSong.playing) {
+       if(actualSong.playing && actualSong.title === song.title) {
             setButton('pause');
-            myRef.current.play()
         } else {
             setButton('play');
-            myRef.current.pause()
         }
-    },[actualSong, allSongs, song])
+    },[actualSong, allSongs])
 
+    
     return (
         <article className="song-container">
             <div className="name"><strong>{song.songName}</strong></div>
             <div className="play-icon">
                 <span>02:53</span>
-                <audio
-                    ref={myRef}
-                    src={songMP3}
-                />
-            
+
                 <button onClick={() => {togglePlay(song.id); toggleSingle();} }>
                     <i className={`fas fa-${button}`}></i>
                 </button>

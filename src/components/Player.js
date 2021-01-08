@@ -5,34 +5,89 @@ import { connect } from 'react-redux';
 import { selectedSong, pauseAllSongs } from '../actions/index';
 
 
-const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong }) => {
+const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong  }) => {
 
     const [song, setSong] = useState('');
-
-    const pauseSong = (allSongs) => {
-        
-        getAllPausedSongs(allSongs);
-        setSong('');
-
+    const [title, setTitle] = useState('');
+    
+    const getNextSongClick = () => {
+        if(actualSong.id < 9){
+            const songNextId = actualSong.id + 1;
+            const songNext = allSongs.find(song => {
+                return song.id === songNextId;
+            })
+            getActualSong(songNextId, allSongs);
+            setSong(songNext.mp3SongUrl);
+            setTitle(songNext.title);
+        }else{
+            const songFirstId = 1;
+            const songFirst = allSongs.find(song => {
+                return song.id === songFirstId;
+            })
+            getActualSong(songFirstId, allSongs);
+            setSong(songFirst.mp3SongUrl);
+            setTitle(songFirst.title);
+        }
     }
+
+    const getPreviousSongClick = () => {
+        if(actualSong.id > 1){
+            const songPreviousId = actualSong.id - 1;
+            const songPrevious = allSongs.find(song => {
+                return song.id === songPreviousId;
+            })
+            console.log(songPrevious);
+            getActualSong(songPreviousId, allSongs);
+            setSong(songPrevious.mp3SongUrl);
+            setTitle(songPrevious.title);
+        }else{
+            const songFirstId = actualSong.id;
+            const songFirst = allSongs.find(song => {
+                return song.id === songFirstId;
+            })
+            getActualSong(songFirstId, allSongs);
+            setSong(songFirst.mp3SongUrl);
+            setTitle(songFirst.title);
+        }
+    }
+
+
+
+ /*    const pauseSong = (allSongs) => {
+        
+    }  */
 
     const playSong = (actualSong) => {
         
         setSong(actualSong.mp3SongUrl);
+
     }
     
     useEffect(()=> {
         
-        setSong(actualSong.mp3SongUrl);
+        if(actualSong){
+            setSong(actualSong.mp3SongUrl);
+            setTitle(actualSong.title);
+        }
 
-    },[actualSong, allSongs])
+    },[actualSong, allSongs, song])
 
     return (
         <AudioPlayer
             autoPlay
             src={song}
+
             onPlay={() => playSong}
-            onPause={()=> pauseSong}
+            /* onPause={()=> pauseSong} */
+
+            onClickPrevious={getPreviousSongClick}
+            onClickNext={getNextSongClick}
+
+            showSkipControls={true} 
+            showJumpControls={false}
+
+            header={title}
+
             // other props here
         />
     )   
@@ -52,3 +107,5 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Player);
+
+
