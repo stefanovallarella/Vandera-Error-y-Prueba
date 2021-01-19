@@ -382,18 +382,58 @@ body {
     }
 }
 
+.song-detail-container{
+    width: 300px;
+    height: 400px;
+
+    .options-container{
+        padding: 1rem;
+        .options-button{
+            padding: .1rem;
+            margin: 0 .2rem;
+        }
+
+        .options-active{
+            background-color: #ccc;
+        }
+
+    }
+
+    .detail-container{
+        width: 80%;
+        padding: 1rem;
+    }
+
+}
+
 
 .rhap_container{
     position:fixed;
     bottom:0;
     z-index: 900;
-   /*  .rhap_main{
+  /*   .rhap_main{
         
         
         &.rhap_stacked{
             
-        }
+            .rhap_progress-section{
+                
+                .rhap-time{
+                    &.rhap_current-time{
 
-    }  */
-}
+                    }
+                }
 
+                .rhap-progress-container{
+                    
+                }
+
+            }
+            .rhap-controls-section{
+                
+            } 
+
+        } 
+
+    } */
+} 

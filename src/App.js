@@ -9,6 +9,8 @@ import Footer from './components/Footer';
 
 import AudioPlayer from './components/Player';
 
+import SongsDetailContainer from './components/main-section/songs-details/SongsDetailContainer';
+
 const App = () => {
   return (
     <>
@@ -18,6 +20,8 @@ const App = () => {
       <AboutAlbum />
       <Footer />
       <AudioPlayer />
+      
+      <SongsDetailContainer />
       
     </>
   );

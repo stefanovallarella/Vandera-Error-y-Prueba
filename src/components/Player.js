@@ -83,6 +83,8 @@ const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong  }) => 
             onClickPrevious={getPreviousSongClick}
             onClickNext={getNextSongClick}
 
+            onEnded={getNextSongClick}
+
             showSkipControls={true} 
             showJumpControls={false}
 

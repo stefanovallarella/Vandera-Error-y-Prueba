@@ -37,6 +37,13 @@ import llamadasPerdidasMP3 from '../assets/audios/llamadas-perdidas.mp3';
 import superLentoMP3 from '../assets/audios/super-lento.mp3';
 import vietnamMP3 from '../assets/audios/vietnam.mp3';
 
+// Lyrics
+
+import Lyrics from '../assets/lyrics/Lyrics';
+import Credits from '../assets/credits/Credits';
+
+
+
 const initialState = {
     allSongs: [
         {
@@ -47,6 +54,8 @@ const initialState = {
             mainSectionBg: continuarM,
             mp3SongUrl: continuarMP3,
             playing: false,
+            lyrics: Lyrics.continuar,
+            credits: Credits.continuar,
         },
         {
             id: 2,
@@ -56,6 +65,8 @@ const initialState = {
             mainSectionBg: grados180M,
             mp3SongUrl: grados180MP3,
             playing: false,
+            lyrics: Lyrics.grados180,
+            credits: Credits.grados180
         },  
         {
             id: 3,
@@ -65,6 +76,8 @@ const initialState = {
             mainSectionBg: asiEsM,
             mp3SongUrl: asiEsMP3,
             playing: false,
+            lyrics: Lyrics.asiEs,
+            credits: Credits.asiEs
         },   
         {
             id: 4,
@@ -74,6 +87,8 @@ const initialState = {
             mainSectionBg: caeLaParedM,
             mp3SongUrl: caeLaParedMP3,
             playing: false,
+            lyrics: Lyrics.caeLaPared,
+            credits: Credits.caeLaPared
         },  
         {
             id: 5,
@@ -83,6 +98,8 @@ const initialState = {
             mainSectionBg: errorYPruebaM,
             mp3SongUrl: errorYPruebaMP3,
             playing: false,
+            lyrics: Lyrics.errorYPrueba,
+            credits: Credits.errorYPrueba
         },   
         {
             id: 6,
@@ -92,6 +109,8 @@ const initialState = {
             mainSectionBg: estoyBienM,
             mp3SongUrl: estoyBienMP3,
             playing: false,
+            lyrics: Lyrics.estoyBien,
+            credits: Credits.estoyBien
         },    
         {
             id: 7,
@@ -101,6 +120,8 @@ const initialState = {
             mainSectionBg: llamadasPerdidasM,
             mp3SongUrl: llamadasPerdidasMP3,
             playing: false,
+            lyrics: Lyrics.llamadasPerdidas,
+            credits: Credits.llamadasPerdidas
         },   
         {
             id: 8,
@@ -110,6 +131,8 @@ const initialState = {
             mainSectionBg: superLentoM,
             mp3SongUrl: superLentoMP3,
             playing: false,
+            lyrics: Lyrics.superLento,
+            credits: Credits.superLento
         },
         {
             id: 9,
@@ -119,6 +142,8 @@ const initialState = {
             mainSectionBg: vietnamM,
             mp3SongUrl: vietnamMP3,
             playing: false,
+            lyrics: Lyrics.vietnam,
+            credits: Credits.vietnam
         }
     ],
     actualSong: {},
