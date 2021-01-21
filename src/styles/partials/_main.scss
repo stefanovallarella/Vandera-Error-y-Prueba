@@ -8,6 +8,10 @@ body {
     color: var(--color-text);
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;}
+
 // Container
 .container {
     max-width: 380px;
@@ -383,28 +387,32 @@ body {
 }
 
 .song-detail-container{
-    width: 300px;
-    height: 400px;
+    width: 400px;
 
     .options-container{
+        width: 90%;
         padding: 1rem;
+
         .options-button{
-            padding: .1rem;
-            margin: 0 .2rem;
+            padding: .1rem 2rem;
+            border-bottom: solid 1px #ccc;
         }
 
         .options-active{
-            background-color: #ccc;
+            border-bottom: solid 1px black;
         }
 
     }
 
     .detail-container{
+        overflow-y: scroll;
         width: 80%;
-        padding: 1rem;
+        height: 400px;
+        padding: 1rem 2rem;
     }
 
 }
+
 
 
 .rhap_container{
@@ -437,3 +445,9 @@ body {
 
     } */
 } 
+
+
+.pepito{
+    background-color: red;
+    display: none;
+}

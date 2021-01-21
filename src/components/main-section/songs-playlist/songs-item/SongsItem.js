@@ -35,7 +35,7 @@ const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}
             <div className="play-icon">
                 <span>02:53</span>
 
-                <button onClick={() => {togglePlay(song.id); toggleSingle();} }>
+                <button className='play-button' onClick={() => {togglePlay(song.id); toggleSingle();} }>
                     <i className={`fas fa-${button}`}></i>
                 </button>
 

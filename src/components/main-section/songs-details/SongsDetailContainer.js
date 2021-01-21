@@ -26,8 +26,8 @@ const SongsDetailContainer = () => {
             <div className='detail-container'>
 
                 <AnimatedSwitch
-                atEnter={{ opacity: 0.2 }}
-                atLeave={{ opacity: 0.2 }}
+                atEnter={{ opacity: 0.5 }}
+                atLeave={{ opacity: 0.5 }}
                 atActive={{ opacity: 1 }}
                 className="switch-wrapper"
                 >

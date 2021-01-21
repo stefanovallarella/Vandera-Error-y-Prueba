@@ -9,7 +9,7 @@ import mainM from '../../assets/images/img-manchas/error-y-prueba-manchas.png';
 const MainSection = ( { actualSong } ) => {
     return (
         <section className="block block--hero">
-            <div className="container">
+            <div id='playlist' className="container">
                 <div className="block__content">
 
                     <div className='container-song-title'>
