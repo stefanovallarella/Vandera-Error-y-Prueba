@@ -240,6 +240,17 @@ body {
             .title {
                 margin-bottom: 30px;
             }
+            .container-song-title{
+                transform: translateX(120%);
+                transition: all 2s ease-in-out;
+            }
+            /* .song-detail-container{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            } */
         }
         .block__img {
             position: absolute;
@@ -247,6 +258,11 @@ body {
             max-height: 100%;
             right: 0;
             z-index: 5;
+
+            &.img-playing{
+                opacity: .2;
+                transition: opacity 1s linear .5s;
+            }
         }
     }
     &.block--bottom {
@@ -387,6 +403,7 @@ body {
 }
 
 .song-detail-container{
+
     width: 400px;
 
     .options-container{
@@ -445,9 +462,3 @@ body {
 
     } */
 } 
-
-
-.pepito{
-    background-color: red;
-    display: none;
-}

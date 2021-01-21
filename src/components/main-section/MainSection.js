@@ -3,16 +3,22 @@ import { connect } from 'react-redux';
 import SongsPlaylistContainer from '../main-section/songs-playlist/SongsPlaylistContainer';
 import SongsTitleContainer from '../main-section/songs-playlist/songs-title/SongsTitleContainer';
 
+import SongsDetailContainer from '../main-section/songs-details/SongsDetailContainer';
+
 import mainImg from '../../assets/images/img-vandera/vanderasolo.png';
 import mainM from '../../assets/images/img-manchas/error-y-prueba-manchas.png';
 
 const MainSection = ( { actualSong } ) => {
     return (
         <section className="block block--hero">
-            <div id='playlist' className="container">
+
+            {/* { actualSong.playing ? <SongsDetailContainer /> : ' ' } */}
+
+            <div className="container">
                 <div className="block__content">
 
-                    <div className='container-song-title'>
+                    
+                    <div className={ actualSong.playing ? 'container-song-title' : ' ' }>
 
                         <div className='title'>
                             <SongsTitleContainer/>
@@ -27,7 +33,7 @@ const MainSection = ( { actualSong } ) => {
                 </div>
             </div>
 
-            <img src={actualSong.mainSectionPic ? actualSong.mainSectionPic : mainImg} alt="" className="block__img" />
+            <img src={actualSong.mainSectionPic ? actualSong.mainSectionPic : mainImg} alt=""  className={ actualSong.playing ? 'block__img img-playing' : 'block__img' } />
 
             <div className="block__bg"
                 style={{
