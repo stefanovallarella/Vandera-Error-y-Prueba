@@ -5,8 +5,9 @@ import { connect } from 'react-redux';
 import { selectedSong, pauseAllSongs } from '../actions/index';
 
 
-const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong  }) => {
+const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong }) => {
 
+    const [playerActive, setPlayerActive] = useState(false);
     const [song, setSong] = useState('');
     const [title, setTitle] = useState('');
     
@@ -68,6 +69,7 @@ const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong  }) => 
         if(actualSong){
             setSong(actualSong.mp3SongUrl);
             setTitle(actualSong.title);
+            setPlayerActive(true);
         }
 
     },[actualSong, allSongs, song])
@@ -89,7 +91,8 @@ const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong  }) => 
             showJumpControls={false}
 
             header={title}
-
+            visibility={playerActive}
+            className={playerActive && `active` }
             // other props here
         />
     )   

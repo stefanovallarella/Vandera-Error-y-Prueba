@@ -12,11 +12,10 @@ const MainSection = ( { actualSong } ) => {
     return (
         <section className="block block--hero">
 
-            {/* { actualSong.playing ? <SongsDetailContainer /> : ' ' } */}
-
             <div className="container">
-                <div className="block__content">
 
+                { actualSong.playing ? <SongsDetailContainer /> : ' ' }
+                <div className="block__content">
                     
                     <div className={ actualSong.playing ? 'container-song-title' : ' ' }>
 

@@ -242,7 +242,7 @@ body {
             }
             .container-song-title{
                 transform: translateX(120%);
-                transition: all 2s ease-in-out;
+                transition: all .6s ease-in-out;
             }
             /* .song-detail-container{
                 position: relative;
@@ -403,9 +403,8 @@ body {
 }
 
 .song-detail-container{
-
-    width: 400px;
-
+    position: absolute;
+    width: 550px;
     .options-container{
         width: 90%;
         padding: 1rem;
@@ -430,12 +429,15 @@ body {
 
 }
 
-
-
 .rhap_container{
     position:fixed;
-    bottom:0;
+    bottom: 0;
     z-index: 900;
+    transition: all .3s ease-in-out;
+    transform: translateY(100%);
+    &.active {
+        transform: translateY(0);
+    }
   /*   .rhap_main{
         
         

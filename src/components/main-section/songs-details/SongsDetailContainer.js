@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { NavLink, Route } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 
@@ -8,14 +7,7 @@ import Extras from './songs-lyrics-extras/Extras';
 
 
 const SongsDetailContainer = () => {
-
-    useEffect(()=>{
-
-    })
-
-
     return (
-        
         <div className='song-detail-container'>
             <div className='options-container'>
                 <NavLink exact to="/" className='options-button' activeClassName="options-active">Lyrics</NavLink>
@@ -37,13 +29,8 @@ const SongsDetailContainer = () => {
                 </AnimatedSwitch>
 
             </div>
-
         </div>
-
-
     )   
 }
 
-
-  
 export default SongsDetailContainer;
