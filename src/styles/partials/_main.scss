@@ -64,13 +64,20 @@ body {
         text-transform: uppercase;
     }
     &.title--border {
+        text-align: center;
+        @include breakpoint(phone) {
+            text-align: left;
+        }
         &:after {
             display: block;
             content: '';
             height: 4px;
             width: 22px;
             background-color: var(--color-black);
-            margin-top: 20px;
+            margin: 20px auto 0 auto;
+            @include breakpoint(phone) {
+                margin: 20px 0 0 0;
+            }
         }
     }
 }
@@ -91,9 +98,11 @@ body {
 
 .social {
     display: flex;
+    justify-content: center;
     align-items: center;
     @include breakpoint(phone) {
         margin: 0 -12px;
+        justify-content: flex-start;
     }
     a {
         font-size: 21px;
@@ -116,30 +125,42 @@ body {
 
 
 .header {
-    height: 100px;
-    position: fixed;
+    height: 70px;
+    position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 900;
+    @include breakpoint(phone) {
+        height: 100px;
+    }
     .container {
         height: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
+        @include breakpoint(phone) {
+            justify-content: space-between;
+        }
     }
     .header__logo {
         display: block;
         svg {
-            width: 260px;
+            width: 200px;
+            @include breakpoint(phone) {
+                width: 260px;
+            }
         }
     }
     .header__menu {
-        height: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: auto;
+        display: none;
+        @include breakpoint(phone) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-left: auto;
+            height: 100%;
+        }
     }
     .header__nav {
         margin-right: 40px;
@@ -155,25 +176,59 @@ body {
     }
 }
 
-// .gallery {
-//     display: grid;
-//     grid-template-columns: 4fr 6fr 6fr;
-//     grid-gap: 20px;
-//     .gallery__item {
-//         display: block;
-//         background-color: var(--color-black);
-//         position: relative;
-//         overflow: hidden;
-//         display: flex;
-//         align-items: center;
-//         justify-content: center;
-//         height: 188px;
-//         &:last-child {
-//             grid-column: span 2;
-//             height: 378px;
-//         }
-//     }
-// }
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    @include breakpoint(tablet-lg) {
+        grid-template-columns: 4fr 6fr 6fr;
+    }
+    .gallery__item {
+        display: block;
+        background-color: var(--color-black);
+        position: relative;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 164px;
+        overflow: hidden;
+        @include breakpoint(phone) {
+            height: 188px;
+        }
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all .3s ease-in-out;
+        }
+        &:hover {
+            img {
+                transform: scale(1.08);
+                filter: grayscale(50%) contrast(110%);
+            }
+        }
+        &:first-child {
+            @include breakpoint(phone) {
+                height: 285px;
+                margin-bottom: -92px;
+            }
+        }
+        &:nth-child(4) {
+            @include breakpoint(phone) {
+                height: 286px;
+                margin-top: 92px;
+            }
+        }
+        &:last-child {
+            grid-column: span 2;
+            height: 348px;
+            @include breakpoint(phone) {
+                height: 378px;
+            }
+        }
+    }
+}
 
 .block {
     position: relative;
@@ -199,8 +254,11 @@ body {
     }
     .block__list {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-gap: 25px 50px;
+        grid-gap: 20px;
+        @include breakpoint(phone) {
+            grid-template-columns: repeat(2, 1fr);
+            grid-gap: 25px 50px;
+        }
         li {
             i {
                 font-size: 21px;
@@ -224,9 +282,9 @@ body {
         }
     }
     &.block--hero {
-        padding-top: 50px;
+        padding: 150px 0 50px;
         @include breakpoint(phone) {
-            padding-top: 0;
+            padding: 0;
             height: 100vh;
         }
         > .container {
@@ -253,15 +311,22 @@ body {
             } */
         }
         .block__img {
+            backface-visibility: hidden;
             position: absolute;
             bottom: 0;
             max-height: 100%;
-            right: 0;
+            width: 100%;
+            object-fit: contain;
             z-index: 5;
-
+            opacity: .2;
+            @include breakpoint(phone) {
+                right: 0;
+                opacity: 1;
+                width: auto;
+            }
             &.img-playing{
                 opacity: .2;
-                transition: opacity 1s linear .5s;
+                transition: opacity 1s linear;
             }
         }
     }
@@ -282,23 +347,39 @@ body {
         }
     }
     &.block--about {
+        padding: 50px 0;
+        text-align: center;
         @include breakpoint(phone) {
+            padding: 100px 0;
+            text-align: left;
+        }
+        @include breakpoint(desktop-lg) {
             padding: 250px 0;
         }
         > .container {
-            @include breakpoint(phone) {
+            @include breakpoint(tablet-lg) {
                 display: grid;
                 grid-template-columns: 7fr 5fr;
                 height: 100%;
             }
         }
         .block__content {
-            padding-left: 100px;
+            margin-bottom: 50px;
+            @include breakpoint(phone) {
+                order: 2;
+                margin-bottom: 0;
+            }
+            @include breakpoint(phone) {
+                padding-left: 100px;
+            }
         }
     }
     &.block--footer {
+        padding: 50px 0;
+        text-align: center;
         @include breakpoint(phone) {
             padding: 180px 0;
+            text-align: left;
         }
         > .container {
             @include breakpoint(phone) {
@@ -308,20 +389,29 @@ body {
             }
         }
         .block__list {
-            margin-bottom: 70px;
+            margin-bottom: 50px;
+            @include breakpoint(phone) {
+                margin-bottom: 70px;
+            }
         }
         .block__bottom {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 25px 50px;
+            grid-gap: 20px;
             align-items: center;
+            @include breakpoint(phone) {
+                grid-template-columns: repeat(2, 1fr);
+                grid-gap: 25px 50px;
+            }
             p {
                 font-size: 12px;
             }
         }
         .title {
             &.title--border {
-                margin-bottom: 70px;
+                margin-bottom: 30px;
+                @include breakpoint(phone) {
+                    margin-bottom: 70px;
+                }
                 &:after {
                     background-color: #fff;
                 }
@@ -372,7 +462,9 @@ body {
 
 
 .playlist-container {
-    width: 75%;
+    @include breakpoint(phone) {
+        width: 75%;
+    }
     .song-container {
         padding: 10px 0;
         display: flex;
@@ -425,6 +517,13 @@ body {
         width: 80%;
         height: 400px;
         padding: 1rem 2rem;
+        > div {
+        position: relative;
+        > div {
+            position: absolute;
+            width: 100%;
+        }
+        }
     }
 
 }
@@ -464,3 +563,79 @@ body {
 
     } */
 } 
+
+/* 
+will run on items added after initial mount
+*/
+.example-enter {
+    opacity: 0.01;
+  }
+  .example-enter-active {
+    opacity: 1;
+    transition: opacity 1500ms ease-in;
+  }
+  .example-enter-done {
+    opacity: 1;
+  }
+  /* 
+  will run on any item being removed
+  */
+  .example-exit {
+    opacity: 0.5;
+  }
+  .example-exit-active {
+    opacity: 1;
+    transition: opacity 1000ms ease-in-out;
+  }
+  .example-exit-done {
+    opacity: 0;
+  }
+  /* 
+  set to false by default.
+  will run on initial mount only
+  */
+  .example-appear {
+    opacity: 0.01;
+  }
+  .example-appear-active {
+    opacity: 1;
+    transition: opacity 2000ms ease-in-out;
+  }
+  .example-appear-done {
+    /* doesn't exist  use -enter-done */
+    opacity: 1;
+  }
+  
+  // FADE
+  
+  .fade-appear,
+  .fade-enter {
+    opacity: 0;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+  }
+  .fade-appear-active,
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms linear 150ms;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .fade-exit {
+    opacity: 1;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .fade-exit.fade-exit-active {
+    opacity: 0;
+    transition: opacity 300ms linear 150ms;
+    position: absolute;
+    width: 100%;
+  }
+  
+  .fade-enter-done {
+    position: absolute;
+  }
