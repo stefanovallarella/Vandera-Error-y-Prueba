@@ -1,15 +1,16 @@
 import AudioPlayer from 'react-h5-audio-player';
 import 'react-h5-audio-player/lib/styles.css';
-import { useState, useEffect } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { selectedSong, pauseAllSongs } from '../actions/index';
+import { selectedSong, pauseAllSongs, pauseActualSong } from '../actions/index';
 
 
-const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong }) => {
+const Player = ({ getActualSong, setPauseActualSong, allSongs, actualSong }) => {
 
     const [playerActive, setPlayerActive] = useState(false);
     const [song, setSong] = useState('');
     const [title, setTitle] = useState('');
+    const player = useRef();
     
     const getNextSongClick = () => {
         if(actualSong.id < 9){
@@ -63,6 +64,11 @@ const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong }) => {
         setSong(actualSong.mp3SongUrl);
 
     }
+    const pauseSong = (id, actualSong) => {
+        
+        setPauseActualSong(id, actualSong)
+
+    }
     
     useEffect(()=> {
         
@@ -74,13 +80,22 @@ const Player = ({ getActualSong, getAllPausedSongs, allSongs, actualSong }) => {
 
     },[actualSong, allSongs, song])
 
+    useEffect(()=> {
+        console.log('pasused');
+        if(!actualSong.playing){
+            player.current.audio.current.pause();
+        }
+    },[actualSong])
+
+
     return (
         <AudioPlayer
             autoPlay
             src={song}
+            ref={player}
 
             onPlay={() => playSong}
-            /* onPause={()=> pauseSong} */
+            onPause={()=> pauseSong(actualSong.id, actualSong)}
 
             onClickPrevious={getPreviousSongClick}
             onClickNext={getNextSongClick}
@@ -107,10 +122,9 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => {
     return{
         getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
+        setPauseActualSong: (id, actualSong) => dispatch(pauseActualSong(id, actualSong)),
         getAllPausedSongs: (allSongs) => dispatch(pauseAllSongs(allSongs))
     }
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(Player);
-
-

@@ -1,8 +1,8 @@
-import { useState, useRef, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { connect } from 'react-redux';
-import { selectedSong, pauseAllSongs } from '../../../../actions/index';
+import { selectedSong, pauseAllSongs, pauseActualSong } from '../../../../actions/index';
 
-const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}) => {
+const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong, setPauseActualSong}) => {
 
     const [button, setButton] = useState('play');
 
@@ -16,8 +16,12 @@ const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong}
     }
 
     const togglePlay = (id) => {
-        getAllPausedSongs(allSongs)
-        getActualSong(id, allSongs)
+        if(button === 'play') {
+            getActualSong(id, allSongs)
+            getAllPausedSongs(id, allSongs)
+        } else {
+            setPauseActualSong(id, actualSong)
+        }
     }
 
     useEffect(() => {
@@ -52,7 +56,8 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => {
     return{
         getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
-        getAllPausedSongs: (allSongs) => dispatch(pauseAllSongs(allSongs))
+        setPauseActualSong: (id, actualSong) => dispatch(pauseActualSong(id, actualSong)),
+        getAllPausedSongs: (id, allSongs) => dispatch(pauseAllSongs(id, allSongs))
     }
 }
 
