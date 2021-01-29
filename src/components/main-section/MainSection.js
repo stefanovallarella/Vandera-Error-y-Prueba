@@ -8,13 +8,19 @@ import SongsDetailContainer from '../main-section/songs-details/SongsDetailConta
 import mainImg from '../../assets/images/img-vandera/vanderasolo.png';
 import mainM from '../../assets/images/img-manchas/error-y-prueba-manchas.png';
 
+import { CSSTransition } from 'react-transition-group'
+import { useEffect, useState } from 'react';
+
+
 const MainSection = ( { actualSong } ) => {
     return (
         <section className="block block--hero">
 
             <div className="container">
 
-                { actualSong.playing ? <SongsDetailContainer /> : ' ' }
+                {actualSong.playing ? 
+                <SongsDetailContainer />
+                : ''}
                 <div className="block__content">
                     
                     <div className={ actualSong.playing ? 'container-song-title' : ' ' }>
