@@ -1,64 +1,82 @@
-import { useState, useEffect } from 'react'
-import { connect } from 'react-redux';
-import { selectedSong, pauseAllSongs, pauseActualSong } from '../../../../actions/index';
+import { useState, useEffect } from "react";
+import { connect } from "react-redux";
+import {
+  selectedSong,
+  pauseAllSongs,
+  pauseActualSong,
+} from "../../../../actions/index";
 
-const SongItem = ({song, allSongs, getActualSong, getAllPausedSongs, actualSong, setPauseActualSong}) => {
+const SongItem = ({
+  song,
+  allSongs,
+  getActualSong,
+  getAllPausedSongs,
+  actualSong,
+  setPauseActualSong,
+  sameSong,
+}) => {
+  const [button, setButton] = useState("play");
 
-    const [button, setButton] = useState('play');
-
-    const toggleSingle = () => {
-
-        if(button === 'play' && song.id === actualSong.id) {
-            setButton('pause');
-        }else{
-            setButton('play');
-        }
+  const toggleSingle = () => {
+    if (button === "play" && song.id === actualSong.id) {
+      setButton("pause");
+    } else {
+      setButton("play");
     }
+  };
 
-    const togglePlay = (id) => {
-        if(button === 'play') {
-            getActualSong(id, allSongs)
-            getAllPausedSongs(id, allSongs)
-        } else {
-            setPauseActualSong(id, actualSong)
-        }
+  const togglePlay = (id) => {
+    if (button === "play") {
+      getActualSong(id, allSongs);
+      getAllPausedSongs(id, allSongs);
+    } else {
+      setPauseActualSong(id, actualSong);
     }
+  };
 
-    useEffect(() => {
-       if(actualSong.playing && actualSong.title === song.title) {
-            setButton('pause');
-        } else {
-            setButton('play');
-        }
-    },[actualSong, allSongs])
+  useEffect(() => {
+    if (actualSong.playing && actualSong.title === song.title) {
+      setButton("pause");
+    } else {
+      setButton("play");
+    }
+  }, [actualSong, allSongs]);
 
-    
-    return (
-        <article className="song-container">
-            <div className="name"><strong>{song.songName}</strong></div>
-            <div className="play-icon">
-                <span>02:53</span>
+  return (
+    <article className="song-container">
+      <div className="name">
+        <strong>{song.songName}</strong>
+      </div>
+      <div className="play-icon">
+        <span>{song.songLength}</span>
 
-                <button className='play-button' onClick={() => {togglePlay(song.id); toggleSingle();} }>
-                    <i className={`fas fa-${button}`}></i>
-                </button>
+        <button
+          className="play-button"
+          onClick={() => {
+            togglePlay(song.id);
+            toggleSingle();
+          }}
+        >
+          <i className={`fas fa-${button}`}></i>
+        </button>
+      </div>
+    </article>
+  );
+};
 
-            </div>
-        </article>
-    )   
-}
-
-const mapStateToProps = state => ({
-    allSongs: state.songs.allSongs,
-    actualSong: state.songs.actualSong,
+const mapStateToProps = (state) => ({
+  allSongs: state.songs.allSongs,
+  actualSong: state.songs.actualSong,
+  sameSong: state.songs.sameSong,
 });
 
 const mapDispatchToProps = (dispatch) => {
-    return{
-        getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
-        setPauseActualSong: (id, actualSong) => dispatch(pauseActualSong(id, actualSong)),
-        getAllPausedSongs: (id, allSongs) => dispatch(pauseAllSongs(id, allSongs))
-    }
-}
+  return {
+    getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
+    setPauseActualSong: (id, actualSong) =>
+      dispatch(pauseActualSong(id, actualSong)),
+    getAllPausedSongs: (id, allSongs) => dispatch(pauseAllSongs(id, allSongs)),
+  };
+};
 
-export default connect(mapStateToProps, mapDispatchToProps) (SongItem);
+export default connect(mapStateToProps, mapDispatchToProps)(SongItem);

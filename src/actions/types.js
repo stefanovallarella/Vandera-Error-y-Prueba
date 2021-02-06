@@ -1,2 +1,3 @@
-export const GET_ALL_SONGS = 'GET_ALL_SONGS';
-export const GET_ACTUAL_SONG = 'GET_ACTUAL_SONG';
+export const GET_ALL_SONGS = "GET_ALL_SONGS";
+export const GET_ACTUAL_SONG = "GET_ACTUAL_SONG";
+export const LISTEN_SAME_SONG = "LISTEN_SAME_SONG";
