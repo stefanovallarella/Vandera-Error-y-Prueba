@@ -8,11 +8,9 @@ const Lyrics = ({ actualSong }) => {
     })
 
     return (
-        
-        <div>{actualSong.lyrics}</div>
-        
-
-
+        <div>
+            <p>{actualSong.lyrics}</p>
+        </div>
     )   
 }
 

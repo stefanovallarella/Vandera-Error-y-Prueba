@@ -12,8 +12,8 @@ const Header = () => {
                 <div className="header__menu">
 
                     <nav className="header__nav">
-                        <a href="/">Sobre el disco</a>
-                        <a href="/">Contacto</a>
+                        <a href="#album">Sobre el álbum</a>
+                        <a href="#contacto">Contacto</a>
                     </nav>
 
                     <Social />

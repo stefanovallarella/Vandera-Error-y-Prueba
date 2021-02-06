@@ -177,6 +177,7 @@ body {
 }
 
 .gallery {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -185,6 +186,7 @@ body {
     }
     .gallery__item {
         display: block;
+        cursor: pointer;
         background-color: var(--color-black);
         position: relative;
         overflow: hidden;
@@ -250,7 +252,7 @@ body {
         right: 0;
         bottom: 0;
         z-index: 1;
-        opacity: .5;
+        opacity: .2;
     }
     .block__list {
         display: grid;
@@ -373,15 +375,36 @@ body {
                 padding-left: 100px;
             }
         }
+        .block__about {
+            text-align: center;
+            @include breakpoint(tablet-lg) {
+                float: right;
+                margin-top: -25px;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 700;
+            }
+            img {
+                max-width: 200px;
+                margin-bottom: 10px;
+                image-rendering: -webkit-optimize-contrast;
+            }
+        }
     }
     &.block--footer {
-        padding: 50px 0;
         text-align: center;
         @include breakpoint(phone) {
-            padding: 180px 0;
             text-align: left;
         }
+        .block__content {
+            padding: 50px 0;
+            @include breakpoint(phone) {
+                padding: 180px 0;
+            }
+        }
         > .container {
+            position: relative;
             @include breakpoint(phone) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -405,6 +428,12 @@ body {
             p {
                 font-size: 12px;
             }
+        }
+        .block__img {
+            max-width: 750px;
+            position: absolute;
+            top: 0;
+            right: -100px;
         }
         .title {
             &.title--border {
@@ -500,32 +529,31 @@ body {
     .options-container{
         width: 90%;
         padding: 1rem;
-
         .options-button{
             padding: .1rem 2rem;
             border-bottom: solid 1px #ccc;
         }
-
         .options-active{
             border-bottom: solid 1px black;
         }
-
     }
-
     .detail-container{
         overflow-y: scroll;
         width: 80%;
         height: 400px;
         padding: 1rem 2rem;
         > div {
-        position: relative;
-        > div {
-            position: absolute;
-            width: 100%;
-        }
+            position: relative;
+            > div {
+                position: absolute;
+                width: 100%;
+                p {
+                    white-space: pre-wrap;
+                    line-height: 150%;
+                }
+            }
         }
     }
-
 }
 
 .rhap_container{

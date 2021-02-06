@@ -9,7 +9,9 @@ const Credits = ({ actualSong }) => {
 
     return (
         
-        <div>{actualSong.credits}</div>
+        <div>
+            <p>{actualSong.credits}</p>
+        </div>
 
 
     )   

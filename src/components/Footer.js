@@ -1,6 +1,8 @@
+import VanderaBack from '../assets/images/img-vandera/vandera-back.png';
+
 const Footer = () => {
     return (
-        <footer className="block block--footer block--gradient">
+        <footer id="contacto" className="block block--footer block--gradient">
             <div className="container">
                 <div className="block__content">
                     <h4 class="title title--border">Contacto</h4>
@@ -40,6 +42,7 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
+                <img className="block__img" src={VanderaBack} alt=""/>
             </div>
         </footer>
     )   
