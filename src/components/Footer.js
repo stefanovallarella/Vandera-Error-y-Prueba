@@ -1,8 +1,10 @@
+import { connect } from 'react-redux';
+
 import VanderaBack from '../assets/images/img-vandera/vandera-back.png';
 
-const Footer = () => {
+const Footer = ({ actualSong }) => {
     return (
-        <footer id="contacto" className="block block--footer block--gradient">
+        <footer id="contacto" className={`block block--footer ${actualSong ? actualSong.bannerBg : "block--gradient"}`}>
             <div className="container">
                 <div className="block__content">
                     <h4 class="title title--border">Contacto</h4>
@@ -47,4 +49,8 @@ const Footer = () => {
         </footer>
     )   
 }
-export default Footer;
+const mapStateToProps = state => ({
+    actualSong: state.songs.actualSong
+});
+
+export default connect(mapStateToProps)(Footer);

@@ -1,3 +1,7 @@
+import { connect } from 'react-redux';
+
+
+
 import logoSpotify from '../assets/images/img/logo-spotify.png'
 import logoYTMusic from '../assets/images/img/logo-yt-music.png'
 import logoAppleMusic from '../assets/images/img/logo-apple-music.png'
@@ -5,9 +9,9 @@ import logoDeezer from '../assets/images/img/logo-deezer.png'
 import logoSoundcloud from '../assets/images/img/logo-soundcloud.png'
 import logoAmazon from '../assets/images/img/logo-amazon.png'
 
-const SocialBanner = () => {
+const SocialBanner = ({ actualSong }) => {
     return (
-        <section className="block block--bottom block--gradient block--padding">
+        <section className={`block block--bottom block--padding ${actualSong ? actualSong.bannerBg : "block--gradient"}`}>
             <div className="container">
                 <p className="title title--lg title--uppercase">Escuchalo en</p>
                 <div className="grid grid--3">
@@ -35,4 +39,8 @@ const SocialBanner = () => {
     )   
 }
 
-export default SocialBanner;
+const mapStateToProps = state => ({
+    actualSong: state.songs.actualSong
+});
+
+export default connect(mapStateToProps)(SocialBanner);

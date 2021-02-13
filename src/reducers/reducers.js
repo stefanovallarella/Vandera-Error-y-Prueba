@@ -44,6 +44,10 @@ import vietnamMP3 from "../assets/audios/vietnam.mp3";
 import Lyrics from "../assets/lyrics/Lyrics";
 import Credits from "../assets/credits/Credits";
 
+
+// Background classes for banners
+import BannerBg from "../assets/banners-bg/banners-bg"
+
 const initialState = {
   allSongs: [
     {
@@ -57,6 +61,7 @@ const initialState = {
       lyrics: Lyrics.continuar,
       credits: Credits.continuar,
       songLength: "2:55",
+      bannerBg: BannerBg.continuar
     },
     {
       id: 2,
@@ -69,6 +74,7 @@ const initialState = {
       lyrics: Lyrics.grados180,
       credits: Credits.grados180,
       songLength: "2:46",
+      bannerBg: BannerBg.grados180
     },
     {
       id: 3,
@@ -81,6 +87,7 @@ const initialState = {
       lyrics: Lyrics.asiEs,
       credits: Credits.asiEs,
       songLength: "4:20",
+      bannerBg: BannerBg.asiEs
     },
     {
       id: 4,
@@ -93,6 +100,7 @@ const initialState = {
       lyrics: Lyrics.caeLaPared,
       credits: Credits.caeLaPared,
       songLength: "3:32",
+      bannerBg: BannerBg.caeLaPared
     },
     {
       id: 5,
@@ -105,6 +113,7 @@ const initialState = {
       lyrics: Lyrics.errorYPrueba,
       credits: Credits.errorYPrueba,
       songLength: "3:30",
+      bannerBg: BannerBg.errorYPrueba
     },
     {
       id: 6,
@@ -117,6 +126,7 @@ const initialState = {
       lyrics: Lyrics.estoyBien,
       credits: Credits.estoyBien,
       songLength: "3:25",
+      bannerBg: BannerBg.estoyBien
     },
     {
       id: 7,
@@ -129,6 +139,7 @@ const initialState = {
       lyrics: Lyrics.llamadasPerdidas,
       credits: Credits.llamadasPerdidas,
       songLength: "3:36",
+      bannerBg: BannerBg.llamadasPerdidas
     },
     {
       id: 8,
@@ -141,6 +152,7 @@ const initialState = {
       lyrics: Lyrics.superLento,
       credits: Credits.superLento,
       songLength: "3:10",
+      bannerBg: BannerBg.superLento
     },
     {
       id: 9,
@@ -153,6 +165,7 @@ const initialState = {
       lyrics: Lyrics.vietnam,
       credits: Credits.vietnam,
       songLength: "2:35",
+      bannerBg: BannerBg.vietnam
     },
   ],
   actualSong: "",
