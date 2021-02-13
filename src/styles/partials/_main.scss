@@ -456,25 +456,25 @@ body {
     &.block--gradient-continuar {
         color: var(--color-white);
         background: rgb(135,10,10);
-        background: linear-gradient(90deg, rgba(135,10,10,1) 0%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 69%, rgba(84,84,84,1) 92%);
+        background: linear-gradient(110deg, rgba(135,10,10,1) 0%, rgba(74,5,5,1) 23%, rgba(31,19,19,1) 45%, rgba(31,19,19,1) 60%, rgba(55,54,54,1) 100%, rgba(116,116,116,1) 100%);
     }
 
     &.block--gradient-grados180 {
         color: var(--color-white);
         background: rgb(57,191,4);
-        background: linear-gradient(90deg, rgba(57,191,4,1) 0%, rgba(57,191,4,1) 35%, rgba(21,31,21,1) 61%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(110deg, rgba(57,191,4,1) 0%, rgba(46,129,15,1) 34%, rgba(36,99,14,1) 58%, rgba(21,31,21,1) 100%);
     }
 
     &.block--gradient-asiEs {
         color: var(--color-white);
         background: rgb(121,5,184);
-        background: linear-gradient(90deg, rgba(121,5,184,1) 0%, rgba(63,4,94,1) 11%, rgba(38,3,56,1) 20%, rgba(34,2,51,1) 37%, rgba(69,3,105,1) 51%, rgba(121,5,184,1) 70%, rgba(121,5,184,1) 75%, rgba(28,1,42,1) 100%);
+        background: linear-gradient(110deg, rgba(121,5,184,1) 0%, rgba(98,4,150,1) 0%, rgba(81,3,122,1) 16%, rgba(84,0,129,1) 22%, rgba(104,5,154,1) 58%, rgba(243,157,194,1) 100%, rgba(243,157,194,1) 100%);
     }
 
     &.block--gradient-caeLaPared {
         color: var(--color-white);
         background: rgb(91,53,102);
-        background: linear-gradient(90deg, rgba(91,53,102,1) 0%, rgba(49,28,55,1) 22%, rgba(49,28,55,1) 42%, rgba(78,46,87,1) 63%, rgba(78,46,87,1) 73%, rgba(97,52,110,1) 100%);
+        background: linear-gradient(115deg, rgba(91,53,102,1) 0%, rgba(49,28,55,1) 22%, rgba(49,28,55,1) 42%, rgba(78,46,87,1) 63%, rgba(78,46,87,1) 73%, rgba(97,52,110,1) 100%);
     }
 
     &.block--gradient-errorYPrueba {
@@ -486,7 +486,7 @@ body {
     &.block--gradient-estoyBien {
         color: var(--color-white);
         background: rgb(215,0,40);
-        background: linear-gradient(90deg, rgba(215,0,40,1) 0%, rgba(142,0,26,1) 26%, rgba(136,0,25,1) 53%, rgba(125,144,106,1) 100%, rgba(125,144,106,1) 100%, rgba(164,0,15,1) 100%);
+        background: linear-gradient(115deg, rgba(215,0,40,1) 0%, rgba(142,0,26,1) 26%, rgba(136,0,25,1) 53%, rgba(125,144,106,1) 100%, rgba(125,144,106,1) 100%, rgba(164,0,15,1) 100%);
     }
 
     &.block--gradient-llamadasPerdidas {
