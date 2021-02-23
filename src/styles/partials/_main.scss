@@ -399,6 +399,8 @@ body {
         }
         .block__content {
             padding: 50px 0;
+            position: relative;
+            z-index: 10;
             @include breakpoint(phone) {
                 padding: 180px 0;
             }
@@ -430,10 +432,15 @@ body {
             }
         }
         .block__img {
-            max-width: 750px;
+            max-width: 100%;
+            left: 0;
             position: absolute;
             top: 0;
-            right: -100px;
+            @include breakpoint(phone) {
+                max-width: 750px;
+                right: -100px;
+                left: inherit;
+            }
         }
         .title {
             &.title--border {
