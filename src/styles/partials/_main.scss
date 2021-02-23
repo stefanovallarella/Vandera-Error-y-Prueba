@@ -233,11 +233,8 @@ body {
 }
 
 .block {
-    position: relative;
     overflow: hidden;
     > .container {
-        position: relative;
-        z-index: 10;
         @include breakpoint(phone) {
             height: 100%;
             display: flex;
@@ -284,12 +281,15 @@ body {
         }
     }
     &.block--hero {
+        position: relative;
         padding: 150px 0 50px;
         @include breakpoint(phone) {
             padding: 0;
             height: 100vh;
         }
         > .container {
+            position: relative;
+            z-index: 10;
             @include breakpoint(phone) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -334,6 +334,7 @@ body {
         }
     }
     &.block--bottom {
+        position: relative;
         padding: 50px 0;
         text-align: center;
         @include breakpoint(phone) {
@@ -395,6 +396,7 @@ body {
     }
     &.block--footer {
         text-align: center;
+        position: relative;
         @include breakpoint(phone) {
             text-align: left;
         }
@@ -408,6 +410,7 @@ body {
         }
         > .container {
             position: relative;
+            z-index: 10;
             @include breakpoint(phone) {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr);
@@ -789,3 +792,10 @@ will run on items added after initial mount
   .fade-enter-done {
     position: absolute;
   }
+
+.pswp {
+    z-index: 9999 !important;
+}
+.pswp__bg {
+    background: rgba(255,255,255,.9) !important;
+}
