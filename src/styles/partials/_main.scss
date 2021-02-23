@@ -325,6 +325,7 @@ body {
                 right: 0;
                 opacity: 1;
                 width: auto;
+                max-height: calc(100% - 50px);
             }
             &.img-playing{
                 opacity: .2;
@@ -597,29 +598,48 @@ background: linear-gradient(90deg, rgba(135,10,10,1) 0%, rgba(0,0,0,1) 41%, rgba
         width: 75%;
     }
     .song-container {
-        padding: 10px 0;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        .name {
-            width: 80%;
+        .song-name {
             text-align: left;
             font-size: 14px;
-        }
-        .play-icon {
-            display: flex;
-            justify-content: center;
-            width: 20%;
-            span {
-                margin-right: 1.5rem;
-                color: rgb(141, 141, 141);
+            text-transform: uppercase;
+            &:hover {
+                .fab {
+                    color: var(--color-primary);
+                    opacity: 1;
+                }
             }
-            button {
-                background-color: transparent;
-                border: none;
-                padding: 0;
-                outline: none;
-                cursor: pointer;
+            .fab {
+                color: var(--color-black);
+                opacity: .7;
+                font-size: 14px;
+                margin-right: .5rem;
+                transition: all .2s ease-in-out;
+            }
+        }
+        .song-options {
+            margin-left: auto;
+            display: flex;
+            align-items: center;
+        }
+        .song-duration {
+            margin-right: 1rem;
+            color: rgb(141, 141, 141);
+            font-size: 13px;
+        }
+        .play-button {
+            background-color: transparent;
+            color: var(--color-black);
+            border: none;
+            padding: 10px;
+            outline: none;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all .2s ease-in-out;
+            &:hover {
+                color: var(--color-primary);
             }
         }
     }
