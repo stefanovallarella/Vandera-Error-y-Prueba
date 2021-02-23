@@ -44,11 +44,14 @@ const SongItem = ({
 
   return (
     <article className="song-container">
-      <div className="name">
-        <strong>{song.songName}</strong>
-      </div>
-      <div className="play-icon">
-        <span>{song.songLength}</span>
+      <a href={song.spotifyUrl} target="_blank" rel="nofollow noreferrer" className="song-name">
+        <i className="fab fa-spotify"></i>
+        <strong>{song.title}</strong>
+      </a>
+      
+      <div className="song-options">
+        <span className="song-duration">{song.songLength}</span>
+        <a className="song-link" href={song.spotifyUrl} target="_blank" rel="nofollow noreferrer"></a>
 
         <button
           className="play-button"
@@ -59,7 +62,9 @@ const SongItem = ({
         >
           <i className={`fas fa-${button}`}></i>
         </button>
+
       </div>
+
     </article>
   );
 };
