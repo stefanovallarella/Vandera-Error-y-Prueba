@@ -9,7 +9,7 @@ const Extras = ({ actualSong }) => {
 
     return (
         
-        <div><p>extras</p></div>
+        <div><p>{actualSong.extras}</p></div>
 
 
 
