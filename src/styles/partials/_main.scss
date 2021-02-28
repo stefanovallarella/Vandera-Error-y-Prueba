@@ -2,6 +2,9 @@ html,body{overflow-x:hidden !important}
 
 *,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}
 
+html {
+  scroll-behavior: smooth;
+}
 body {
     background-color: var(--bg-body);
     font-family: var(--main-font);
@@ -145,6 +148,7 @@ body {
     }
     .header__logo {
         display: block;
+        margin-left: -20px;
         svg {
             width: 200px;
             @include breakpoint(phone) {
@@ -181,7 +185,7 @@ body {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
-    @include breakpoint(tablet-lg) {
+    @include breakpoint(phone) {
         grid-template-columns: 4fr 6fr 6fr;
     }
     .gallery__item {
@@ -281,11 +285,21 @@ body {
         }
     }
     &.block--hero {
+        overflow: hidden;
         position: relative;
-        padding: 150px 0 50px;
+        padding: 100px 0 20px;
         @include breakpoint(phone) {
-            padding: 0;
+            padding: 150px 0 50px;
+        }
+        @include breakpoint(tablet-lg) {
             height: 100vh;
+            max-height: 730px;
+        }
+        @include breakpoint(desktop-lg) {
+            max-height: 860px;
+        }
+        @include breakpoint(desktop-xl) {
+            max-height: none;
         }
         > .container {
             position: relative;
@@ -303,29 +317,28 @@ body {
             .container-song-title{
                 transform: translateX(120%);
                 transition: all .6s ease-in-out;
+                > .title{
+                    width: 100%;
+                }
             }
-            /* .song-detail-container{
-                position: relative;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-            } */
         }
         .block__img {
             backface-visibility: hidden;
             position: absolute;
             bottom: 0;
-            max-height: 100%;
+            max-height: calc(100% - 50px);
             width: 100%;
             object-fit: contain;
             z-index: 5;
             opacity: .2;
             @include breakpoint(phone) {
-                right: 0;
+                right: -100px;
                 opacity: 1;
                 width: auto;
                 max-height: calc(100% - 50px);
+            }
+            @include breakpoint(desktop-lg) {
+                right: 0;
             }
             &.img-playing{
                 opacity: .2;
@@ -353,6 +366,7 @@ body {
     &.block--about {
         padding: 50px 0;
         text-align: center;
+        position: relative;
         @include breakpoint(phone) {
             padding: 100px 0;
             text-align: left;
@@ -361,19 +375,28 @@ body {
             padding: 250px 0;
         }
         > .container {
+            position: relative;
+            z-index: 10;
+            display: block;
             @include breakpoint(tablet-lg) {
                 display: grid;
-                grid-template-columns: 7fr 5fr;
+                grid-template-columns: repeat(2, 1fr);
                 height: 100%;
+            }
+            @include breakpoint(desktop-lg) {
+                grid-template-columns: 7fr 5fr;
             }
         }
         .block__content {
             margin-bottom: 50px;
             @include breakpoint(phone) {
                 order: 2;
+            }
+            @include breakpoint(tablet-lg) {
+                padding-left: 50px;
                 margin-bottom: 0;
             }
-            @include breakpoint(phone) {
+            @include breakpoint(desktop-lg) {
                 padding-left: 100px;
             }
         }
@@ -381,6 +404,9 @@ body {
             text-align: center;
             @include breakpoint(tablet-lg) {
                 float: right;
+                margin-top: 0px;
+            }
+            @include breakpoint(desktop-lg) {
                 margin-top: -25px;
             }
             p {
@@ -388,9 +414,12 @@ body {
                 font-weight: 700;
             }
             img {
-                max-width: 200px;
+                max-width: 150px;
                 margin-bottom: 10px;
                 image-rendering: -webkit-optimize-contrast;
+                @include breakpoint(desktop-lg) {
+                    max-width: 200px;
+                }
             }
         }
     }
@@ -413,8 +442,11 @@ body {
             z-index: 10;
             @include breakpoint(phone) {
                 display: grid;
-                grid-template-columns: repeat(2, 1fr);
                 height: 100%;
+                grid-template-columns: 8fr 4fr;
+            }
+            @include breakpoint(tablet-lg) {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         .block__list {
@@ -456,6 +488,9 @@ body {
                     background-color: #fff;
                 }
             }
+        }
+        &.is-player-active {
+            margin-bottom: 114px;
         }
     }
     &.block--gradient {
@@ -517,84 +552,7 @@ body {
         background: rgb(17,115,55);
         background: linear-gradient(115deg, rgba(17,115,55,1) 0%, rgba(17,115,55,1) 2%, rgba(70,115,90,1) 42%, rgba(70,115,90,1) 54%, rgba(66,149,193,1) 100%, rgba(66,149,193,1) 100%);
     }
-
-
-    /* block--gradient-continuar */
-    // Continuar
-    /* background: rgb(135,10,10);
-background: linear-gradient(90deg, rgba(135,10,10,1) 0%, rgba(0,0,0,1) 41%, rgba(0,0,0,1) 69%, rgba(84,84,84,1) 92%); */
-
-    // 180 grados
-    // background: rgb(57,191,4);
-    // background: linear-gradient(90deg, rgba(57,191,4,1) 0%, rgba(57,191,4,1) 35%, rgba(21,31,21,1) 61%, rgba(0,0,0,1) 100%);
-
-    // Así es
-    // background: rgb(121,5,184);
-    // background: linear-gradient(90deg, rgba(121,5,184,1) 0%, rgba(63,4,94,1) 11%, rgba(38,3,56,1) 20%, rgba(34,2,51,1) 37%, rgba(69,3,105,1) 51%, rgba(121,5,184,1) 70%, rgba(121,5,184,1) 75%, rgba(28,1,42,1) 100%);
-
-    // Cae la pared
-    // background: rgb(91,53,102);
-    // background: linear-gradient(90deg, rgba(91,53,102,1) 0%, rgba(49,28,55,1) 22%, rgba(49,28,55,1) 42%, rgba(78,46,87,1) 63%, rgba(78,46,87,1) 73%, rgba(97,52,110,1) 100%);
-
-    // Error y prueba
-    // background: rgb(66,18,131);
-    // background: linear-gradient(115deg, rgba(66,18,131,1) 0%, rgba(75,31,157,1) 54%, rgba(151,47,236,1) 100%);
-
-
-    // Estoy bien
-    // background: rgb(215,0,40);
-    // background: linear-gradient(90deg, rgba(215,0,40,1) 0%, rgba(142,0,26,1) 26%, rgba(136,0,25,1) 53%, rgba(125,144,106,1) 100%, rgba(125,144,106,1) 100%, rgba(164,0,15,1) 100%);
-
-    // Llamadas perdidas
-    // background: rgb(161,8,106);
-    // background: linear-gradient(115deg, rgba(161,8,106,1) 0%, rgba(113,4,74,1) 25%, rgba(119,6,79,1) 56%, rgba(201,6,152,1) 93%);
-
-    // SUperLento
-    // background: rgb(16,49,101);
-    // background: linear-gradient(115deg, rgba(16,49,101,1) 0%, rgba(16,49,101,1) 27%, rgba(42,48,113,1) 58%, rgba(49,57,136,1) 73%, rgba(80,91,209,1) 100%);
-
-    // Vietnam
-    // background: rgb(17,115,55);
-    // background: linear-gradient(115deg, rgba(17,115,55,1) 0%, rgba(17,115,55,1) 2%, rgba(70,115,90,1) 42%, rgba(70,115,90,1) 54%, rgba(66,149,193,1) 100%, rgba(66,149,193,1) 100%);
-
 }
-
-.container-song-title{
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
-    > .title{
-        width: 100%;
-        .background {
-            // padding: .5rem .5rem 0;
-            // width: 80%;
-            // .container {
-            //     padding-bottom: 1.5rem;
-            //     padding-top: 1.2rem;
-            //     width: 50%;
-            //     margin: 0 auto;
-            //     span {
-            //         font-weight: bold;
-            //         font-size: 2rem;
-            //         padding-bottom: 1rem;
-            //     }
-            //     .hr {
-            //         background-color: black;
-            //         border: none;
-            //         height: 8px;
-            //         width: 25px;
-            //     }
-            // }
-        }
-    }
-    > .songs{
-        // display: flex;
-        // justify-content: flex-end;
-        // align-items: center;
-    }
-
-}
-
 
 .playlist-container {
     @include breakpoint(phone) {
@@ -650,31 +608,70 @@ background: linear-gradient(90deg, rgba(135,10,10,1) 0%, rgba(0,0,0,1) 41%, rgba
 
 .song-detail-container{
     position: absolute;
-    width: 550px;
+    width: 100%;
+    @include breakpoint(phone) {
+        max-width: 400px;
+    }
+    @include breakpoint(tablet-lg) {
+        max-width: 550px;
+    }
+    &:before {
+        display: block;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        top: 30px;
+        left: 0;
+        right: 0;
+        height: 30px;
+        background-image: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
+    &:after {
+        display: block;
+        content: '';
+        position: absolute;
+        z-index: 1;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background-image: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+    }
     .options-container{
         width: 90%;
-        padding: 1rem;
+        padding: 0 1rem;
         .options-button{
-            padding: .1rem 2rem;
+            display: inline-flex;
+            justify-content: center;
+            height: 30px;
+            align-items: center;
+            padding: 0 2rem;
             border-bottom: solid 1px #ccc;
+            font-size: 12px;
+            text-transform: uppercase;
+            width: 33.33%;
+            @include breakpoint(phone) {
+                width: auto;
+            }
         }
         .options-active{
             border-bottom: solid 1px black;
+            font-weight: 700;
         }
     }
     .detail-container{
-        overflow-y: scroll;
-        width: 80%;
+        overflow-y: auto;
         height: 400px;
-        padding: 1rem 2rem;
+        padding: 30px 1rem;
         > div {
             position: relative;
             > div {
                 position: absolute;
                 width: 100%;
+                padding-bottom: 100px;
                 p {
                     white-space: pre-wrap;
-                    line-height: 150%;
+                    line-height: 200%;
                 }
             }
         }
@@ -690,31 +687,6 @@ background: linear-gradient(90deg, rgba(135,10,10,1) 0%, rgba(0,0,0,1) 41%, rgba
     &.active {
         transform: translateY(0);
     }
-  /*   .rhap_main{
-        
-        
-        &.rhap_stacked{
-            
-            .rhap_progress-section{
-                
-                .rhap-time{
-                    &.rhap_current-time{
-
-                    }
-                }
-
-                .rhap-progress-container{
-                    
-                }
-
-            }
-            .rhap-controls-section{
-                
-            } 
-
-        } 
-
-    } */
 } 
 
 /* 
@@ -738,7 +710,7 @@ will run on items added after initial mount
   }
   .example-exit-active {
     opacity: 1;
-    transition: opacity 1000ms ease-in-out;
+    transition: opacity 600ms ease-in-out;
   }
   .example-exit-done {
     opacity: 0;
@@ -752,7 +724,7 @@ will run on items added after initial mount
   }
   .example-appear-active {
     opacity: 1;
-    transition: opacity 2000ms ease-in-out;
+    transition: opacity 1200ms ease-in-out;
   }
   .example-appear-done {
     /* doesn't exist  use -enter-done */

@@ -4,7 +4,7 @@ import VanderaBack from '../assets/images/img-vandera/vandera-back.png';
 
 const Footer = ({ actualSong }) => {
     return (
-        <footer id="contacto" className={`block block--footer ${actualSong ? actualSong.bannerBg : "block--gradient"}`}>
+        <footer id="contacto" className={`block block--footer ${actualSong && `is-player-active`} ${actualSong ? actualSong.bannerBg : "block--gradient"}`}>
             <div className="container">
                 <div className="block__content">
                     <h4 class="title title--border">Contacto</h4>
