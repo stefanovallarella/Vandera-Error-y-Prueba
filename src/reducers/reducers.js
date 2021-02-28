@@ -43,10 +43,13 @@ import vietnamMP3 from "../assets/audios/vietnam.mp3";
 
 import Lyrics from "../assets/lyrics/Lyrics";
 import Credits from "../assets/credits/Credits";
+// Extras
+import Extras from "../assets/extras/extras"
 
 
 // Background classes for banners
 import BannerBg from "../assets/banners-bg/banners-bg"
+
 
 const initialState = {
   allSongs: [
@@ -60,6 +63,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.continuar,
       credits: Credits.continuar,
+      extras: Extras.continuar,
       songLength: "2:56",
       bannerBg: BannerBg.continuar,
       spotifyUrl: 'https://open.spotify.com/track/5NahaNsEA4qopIjLqSrEPb?si=Ot2lRflQQcmOgSfWhMLk1Q'
@@ -74,6 +78,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.superLento,
       credits: Credits.superLento,
+      extras: Extras.superLento,
       songLength: "3:10",
       bannerBg: BannerBg.superLento,
       spotifyUrl: 'https://open.spotify.com/track/6F3kwu7qIpv7kDCt1omkHo?si=Hs48EKN-RB-W9QyAm6USYA'
@@ -88,6 +93,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.grados180,
       credits: Credits.grados180,
+      extras: Extras.grados180,
       songLength: "2:46",
       bannerBg: BannerBg.grados180,
       spotifyUrl: 'https://open.spotify.com/track/0opuZRB2wlpxkFxN0f0DKz?si=ZhzAQFXwRJ6oy0WhGUK3Bg'
@@ -102,6 +108,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.asiEs,
       credits: Credits.asiEs,
+      extras: Extras.asiEs,
       songLength: "4:19",
       bannerBg: BannerBg.asiEs,
       spotifyUrl: 'https://open.spotify.com/track/0SPddgSEGvaS4Kbu4xnENW?si=7DYatSlQT0Ci466z3jmniA'
@@ -116,6 +123,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.errorYPrueba,
       credits: Credits.errorYPrueba,
+      extras: Extras.errorYPrueba,
       songLength: "3:30",
       bannerBg: BannerBg.errorYPrueba,
       spotifyUrl: 'https://open.spotify.com/track/3WXDa3g8ihIBzaEPVi96Pl?si=R2jZexeURAa76oywqzYQ1A'
@@ -130,6 +138,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.llamadasPerdidas,
       credits: Credits.llamadasPerdidas,
+      extras: Extras.llamadasPerdidas,
       songLength: "3:37",
       bannerBg: BannerBg.llamadasPerdidas,
       spotifyUrl: 'https://open.spotify.com/track/4Eco8aztDDybp8WwqLlIdB?si=AL8u0k17RuafZ1UNG_8Gug'
@@ -144,6 +153,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.vietnam,
       credits: Credits.vietnam,
+      extras: Extras.vietnam,
       songLength: "2:34",
       bannerBg: BannerBg.vietnam,
       spotifyUrl: 'https://open.spotify.com/track/5j9NYx9fzEZz3i98U49dsu?si=fYlp3kXqSDaj8UIp8TceXA'
@@ -158,6 +168,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.caeLaPared,
       credits: Credits.caeLaPared,
+      extras: Extras.caeLaPared,
       songLength: "3:33",
       bannerBg: BannerBg.caeLaPared,
       spotifyUrl: 'https://open.spotify.com/track/0IeZBbADalbcpVFmSQPDvn?si=nd4G5-E4S7mImx1F5AsUlQ'
@@ -172,6 +183,7 @@ const initialState = {
       playing: false,
       lyrics: Lyrics.estoyBien,
       credits: Credits.estoyBien,
+      extras: Extras.estoyBien,
       songLength: "3:27",
       bannerBg: BannerBg.estoyBien,
       spotifyUrl: 'https://open.spotify.com/track/4Qfb9I402146bONkZlPoQh?si=9COo92RJRzOa_WRJyurpXg'

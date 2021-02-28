@@ -22,6 +22,8 @@ const credits = {
 
   vietnam:
     "Bateria -Piano-Hammond-Vox: Vandera\nBajo-Keys-Coros: Paco Arancibia\n\nProducido por Vandera\nMix : Paco Arancibia\nMastering :Sr. Warrior",
+  llamadasPerdidas:
+    "Bateria: VP\n\nBajo: Paco Arancibia \n\nGuitarra: Guido Parisi\n\nKeys adicionales- Loops :Bambi\n\nCoros: Bianca Chinelatto - Eva Francica\n\nPiano - Guitarra- Keys y Vox : Vandera\n\nVox: Julieta Rada\n\n\nProducido por Vandera-Bambi\n\nMix : Guillermo Porro\n\nMastering :Sr. Warrior"
 };
 
 export default credits;
