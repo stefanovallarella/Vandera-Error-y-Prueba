@@ -19,8 +19,18 @@ const LogoVandera = ({ actualSong }) => {
           r: 'rgb(39, 0, 0)',
           a2: 'rgb(13, 0, 0)',
           last: 'rgb(0, 0, 0)'
-          };
+        };
         case 2: return {
+          v: 'rgb(48, 33, 178)',
+          a: 'rgb(12, 0, 118)',
+          n: 'rgb(11, 0, 110)',
+          d: 'rgb(29, 13, 169)',
+          e: 'rgb(32, 16, 173)',
+          r: 'rgb(16, 0, 157)',
+          a2: 'rgb(15, 0, 145)',
+          last: 'rgb(11, 0, 105)'
+        };
+        case 3: return {
           v: 'rgb(19, 184, 0)',
           a: 'rgb(18, 166, 0)',
           n: 'rgb(16, 144, 0)',
@@ -29,8 +39,8 @@ const LogoVandera = ({ actualSong }) => {
           r: 'rgb(10, 94, 0)',
           a2: 'rgb(9, 82, 0)',
           last: 'rgb(7, 61, 0)'
-          };
-        case 3: return {
+        };
+        case 4: return {
           v: 'rgb(136, 0, 119)',
           a: 'rgb(131, 0, 104)',
           n: 'rgb(90, 0, 79)',
@@ -39,17 +49,7 @@ const LogoVandera = ({ actualSong }) => {
           r: 'rgb(134, 0, 127)',
           a2: 'rgb(121, 0, 92)',
           last: 'rgb(90, 0, 95)'
-          };
-        case 4: return {
-          v: 'rgb(102, 45, 119)',
-          a: 'rgb(60, 21, 73)',
-          n: 'rgb(42, 20, 48)',
-          d: 'rgb(72, 39, 82)',
-          e: 'rgb(87, 37, 103)',
-          r: 'rgb(97, 37, 116)',
-          a2: 'rgb(96, 41, 113)',
-          last: 'rgb(64, 35, 73)'
-          };
+        };
         case 5: return {
           v: 'rgb(107, 0, 119)',
           a: 'rgb(92, 0, 102)',
@@ -60,7 +60,37 @@ const LogoVandera = ({ actualSong }) => {
           a2: 'rgb(13, 0, 15)',
           last: 'rgb(0, 0, 0)'
           };
-        case 6: return {
+          case 6: return {
+            v: 'rgb(184, 37, 142)',
+            a: 'rgb(153, 31, 119)',
+            n: 'rgb(118, 21, 90)',
+            d: 'rgb(160, 30, 123)',
+            e: 'rgb(181, 33, 139)',
+            r: 'rgb(216, 51, 170)',
+            a2: 'rgb(202, 49, 158)',
+            last: 'rgb(148, 30, 115)'
+          };
+          case 7: return {
+            v: 'rgb(20, 144, 97)',
+            a: 'rgb(14, 105, 71)',
+            n: 'rgb(11, 74, 50)',
+            d: 'rgb(15, 103, 20)',
+            e: 'rgb(19, 131, 88)',
+            r: 'rgb(21, 129, 88)',
+            a2: 'rgb(19, 133, 90)',
+            last: 'rgb(11, 89, 40)'
+          };
+          case 8: return {
+            v: 'rgb(102, 45, 119)',
+            a: 'rgb(60, 21, 73)',
+            n: 'rgb(42, 20, 48)',
+            d: 'rgb(72, 39, 82)',
+            e: 'rgb(87, 37, 103)',
+            r: 'rgb(97, 37, 116)',
+            a2: 'rgb(96, 41, 113)',
+            last: 'rgb(64, 35, 73)'
+          };
+          case 9: return {
           v: 'rgb(169, 33, 59)',
           a: 'rgb(186, 38, 67)',
           n: 'rgb(152, 28, 52)',
@@ -69,36 +99,6 @@ const LogoVandera = ({ actualSong }) => {
           r: 'rgb(234, 51, 87)',
           a2: 'rgb(216, 42, 76)',
           last: 'rgb(161, 31, 57)'
-          };
-        case 7: return {
-          v: 'rgb(184, 37, 142)',
-          a: 'rgb(153, 31, 119)',
-          n: 'rgb(118, 21, 90)',
-          d: 'rgb(160, 30, 123)',
-          e: 'rgb(181, 33, 139)',
-          r: 'rgb(216, 51, 170)',
-          a2: 'rgb(202, 49, 158)',
-          last: 'rgb(148, 30, 115)'
-          };
-        case 8: return {
-          v: 'rgb(48, 33, 178)',
-          a: 'rgb(12, 0, 118)',
-          n: 'rgb(11, 0, 110)',
-          d: 'rgb(29, 13, 169)',
-          e: 'rgb(32, 16, 173)',
-          r: 'rgb(16, 0, 157)',
-          a2: 'rgb(15, 0, 145)',
-          last: 'rgb(11, 0, 105)'
-          };
-        case 9: return {
-          v: 'rgb(20, 144, 97)',
-          a: 'rgb(14, 105, 71)',
-          n: 'rgb(11, 74, 50)',
-          d: 'rgb(15, 103, 20)',
-          e: 'rgb(19, 131, 88)',
-          r: 'rgb(21, 129, 88)',
-          a2: 'rgb(19, 133, 90)',
-          last: 'rgb(11, 89, 40)'
           };
 
         default: return {
