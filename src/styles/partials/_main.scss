@@ -663,6 +663,9 @@ body {
         overflow-y: auto;
         height: 400px;
         padding: 30px 1rem;
+        @include breakpoint(tablet-lg){
+            max-width: 490px;
+        }
         > div {
             position: relative;
             > div {
