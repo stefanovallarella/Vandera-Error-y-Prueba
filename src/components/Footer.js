@@ -14,17 +14,17 @@ const Footer = ({ actualSong }) => {
                             <a href="mailto:info@vandera.com.ar">info@vandera.com.ar</a>
                         </li>
                         <li>
-                            <i className="fas fa-envelope"></i>
-                            <a href="mailto:info@vandera.com.ar">info@vandera.com.ar</a>
+                            <i className="fab fa-instagram"></i>
+                            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/vanderacarlos">@vanderacarlos</a>
                         </li>
-                        <li>
+                  {/*       <li>
                             <i className="fas fa-phone"></i>
                             <a href="tel:+543415532667">+54 341 5532667</a>
                         </li>
                         <li>
                             <i className="fas fa-phone"></i>
                             <a href="tel:+543415532667">+54 341 5532667</a>
-                        </li>
+                        </li> */}
                     </ul>
                     <div className="block__bottom">
                         <p>Copyright © 2021 Vandera</p>
