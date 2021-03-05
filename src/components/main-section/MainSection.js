@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
+import { selectedSong, pauseAllSongs } from "../../actions/index";
 
-import SongsPlaylistContainer from '../main-section/songs-playlist/SongsPlaylistContainer';
-import SongsTitleContainer from '../main-section/songs-playlist/songs-title/SongsTitleContainer';
+import SongItem from './songs-playlist/songs-item/SongsItem'
+import SongsTitle from './songs-playlist/songs-title/SongsTitle';
 
 import SongsDetailContainer from '../main-section/songs-details/SongsDetailContainer';
 
 import mainImg from '../../assets/images/img-vandera/vanderasolo.png';
 import mainM from '../../assets/images/img-manchas/error-y-prueba-manchas.png';
 
-import { CSSTransition } from 'react-transition-group'
-import { useEffect, useState } from 'react';
 
-
-const MainSection = ( { actualSong } ) => {
+const MainSection = ( { allSongs, actualSong, getActualSong } ) => {
+  
     return (
         <section className="block block--hero">
 
@@ -23,14 +22,26 @@ const MainSection = ( { actualSong } ) => {
                 : ''}
                 <div className="block__content">
                     
-                    <div className={ actualSong.playing ? 'container-song-title' : ' ' }>
+                    <div className={ actualSong.playing ? 'container-song-title is-active' : 'container-song-title' }>
 
                         <div className='title'>
-                            <SongsTitleContainer/>
+                            <SongsTitle/>
                         </div>
 
                         <div className='songs'>
-                            <SongsPlaylistContainer />
+                            
+                            <div className='overlay-playlist' >
+                                <button class="btn btn--icon-right" onClick={() => getActualSong(1, allSongs) } >
+                                    Escuchalo ahora 
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+
+                            <div className="playlist-container">
+                            { allSongs.map((song)=>{
+                                return <SongItem song={song} key={song.id} />
+                            })}
+                            </div>
                         </div>
                         
                     </div>
@@ -51,7 +62,15 @@ const MainSection = ( { actualSong } ) => {
 }
 
 const mapStateToProps = state => ({
+    allSongs: state.songs.allSongs,
     actualSong: state.songs.actualSong
 });
 
-export default connect(mapStateToProps)(MainSection);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
+    getAllPausedSongs: (allSongs) => dispatch(pauseAllSongs(allSongs)),
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainSection);

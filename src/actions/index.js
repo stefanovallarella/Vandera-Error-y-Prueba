@@ -1,4 +1,4 @@
-import { GET_ALL_SONGS, GET_ACTUAL_SONG, LISTEN_SAME_SONG } from "./types";
+import { GET_ALL_SONGS, GET_ACTUAL_SONG } from "./types";
 
 export const selectedSong = (id, allSongs) => (dispatch) => {
   allSongs.forEach((song) => {
@@ -24,20 +24,20 @@ export const selectedSong = (id, allSongs) => (dispatch) => {
   });
 };
 
-export const pauseActualSong = (id, actualSong) => (dispatch) => {
-  if (actualSong.id === id) {
-    const newActualSong = actualSong;
-    newActualSong.playing = false;
-    dispatch({
-      type: GET_ACTUAL_SONG,
-      payload: newActualSong,
-    });
-    dispatch({
-      type: LISTEN_SAME_SONG,
-      payload: true,
-    });
-  }
-};
+// export const pauseActualSong = (id, actualSong) => (dispatch) => {
+//   if (actualSong.id === id) {
+//     const newActualSong = actualSong;
+//     newActualSong.playing = false;
+//     dispatch({
+//       type: GET_ACTUAL_SONG,
+//       payload: newActualSong,
+//     });
+//     dispatch({
+//       type: LISTEN_SAME_SONG,
+//       payload: true,
+//     });
+//   }
+// };
 
 export const pauseAllSongs = (id, allSongs) => (dispatch) => {
   const songId = id;
@@ -53,12 +53,3 @@ export const pauseAllSongs = (id, allSongs) => (dispatch) => {
     payload: allPausedSongs,
   });
 };
-/* 
-export const playSongAgain = (sameSong) => (dispatch) => {
-  if (sameSong === true) {
-    dispatch({
-      type: PAUSE_LISTENED_SONG,
-      payload: true,
-    });
-  }
-}; */

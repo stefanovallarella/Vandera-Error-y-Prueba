@@ -200,11 +200,6 @@ const songsReducer = (state = initialState, action) => {
         ...state,
         actualSong: action.payload,
       };
-    case LISTEN_SAME_SONG:
-      return {
-        ...state,
-        sameSong: action.payload,
-      };
     /*     case PAUSE_LISTENED_SONG:
       return {
         ...state,
