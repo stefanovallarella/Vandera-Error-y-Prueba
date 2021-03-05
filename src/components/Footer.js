@@ -1,5 +1,4 @@
 import { connect } from 'react-redux';
-
 import VanderaBack from '../assets/images/img-vandera/vandera-back.png';
 
 const Footer = ({ actualSong }) => {
@@ -17,14 +16,6 @@ const Footer = ({ actualSong }) => {
                             <i className="fab fa-instagram"></i>
                             <a target="_blank" rel="noreferrer" href="https://www.instagram.com/vanderacarlos">@vanderacarlos</a>
                         </li>
-                  {/*       <li>
-                            <i className="fas fa-phone"></i>
-                            <a href="tel:+543415532667">+54 341 5532667</a>
-                        </li>
-                        <li>
-                            <i className="fas fa-phone"></i>
-                            <a href="tel:+543415532667">+54 341 5532667</a>
-                        </li> */}
                     </ul>
                     <div className="block__bottom">
                         <p>Copyright © 2021 Vandera</p>

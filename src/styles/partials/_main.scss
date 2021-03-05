@@ -10,6 +10,9 @@ body {
     font-family: var(--main-font);
     color: var(--color-text);
 }
+button {
+    font-family: var(--main-font);
+}
 
 ::-webkit-scrollbar {
     width: 0px;
@@ -49,6 +52,34 @@ body {
         grid-template-columns: repeat(2, 1fr);
         @include breakpoint(phone) {
             grid-template-columns: repeat(3, 1fr);
+        }
+    }
+}
+
+.btn {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: rgb(66,18,131);
+    background: linear-gradient(115deg, rgba(66,18,131,1) 0%, rgba(75,31,157,1) 54%, rgba(151,47,236,1) 100%);
+    border-radius: 8px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 50px;
+    color: var(--color-white);
+    cursor: pointer;
+    outline: none;
+    border: none;
+    transition: all .4s ease-in-out;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 3px 7px rgba(0,0,0, .2);
+    }
+    &.btn--icon-right {
+        padding-right: 25px;
+        i {
+            margin-left: 25px;
         }
     }
 }
@@ -315,10 +346,25 @@ body {
                 margin-bottom: 30px;
             }
             .container-song-title{
-                transform: translateX(120%);
-                transition: all .6s ease-in-out;
                 > .title{
                     width: 100%;
+                }
+                .playlist-container {
+                    opacity: .5;
+                    @include breakpoint(phone) {
+                        opacity: 1;
+                    }
+                }
+                &.is-active {
+                    transform: translateX(120%);
+                    transition: all .6s ease-in-out;
+                    .playlist-container {
+                        opacity: 1;
+                    }
+                    .overlay-playlist {
+                        opacity: 0;
+                        visibility: hidden;
+                    }
                 }
             }
         }
@@ -554,6 +600,28 @@ body {
     }
 }
 
+.songs {
+    position: relative;
+    .overlay-playlist {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 1;
+        visibility: visible;
+        transition: all .4s ease-in-out;
+        @include breakpoint(phone) {
+            background-color: rgba(255,255,255,.8);
+            width: 75%;
+        }
+    }
+}
+
 .playlist-container {
     @include breakpoint(phone) {
         width: 75%;
@@ -566,18 +634,18 @@ body {
             text-align: left;
             font-size: 14px;
             text-transform: uppercase;
+            background: transparent;
+            border: none;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+            font-weight: 500;
             &:hover {
-                .fab {
-                    color: var(--color-primary);
-                    opacity: 1;
-                }
+                color: var(--color-primary);
             }
-            .fab {
-                color: var(--color-black);
-                opacity: .7;
-                font-size: 14px;
-                margin-right: .5rem;
-                transition: all .2s ease-in-out;
+            &.current {
+                font-weight: 700;
+                pointer-events: none;
             }
         }
         .song-options {
@@ -587,8 +655,22 @@ body {
         }
         .song-duration {
             margin-right: 1rem;
-            color: rgb(141, 141, 141);
+            color: var(--color-black);
+            opacity: .7;
             font-size: 13px;
+        }
+        .song-link {
+            display: block;
+            padding: 10px;
+            color: var(--color-black);
+            opacity: .7;
+            font-size: 14px;
+            margin-right: .5rem;
+            transition: all .2s ease-in-out;
+            &:hover {
+                color: var(--color-primary);
+                opacity: 1;
+            }
         }
         .play-button {
             background-color: transparent;

@@ -2,14 +2,12 @@ import AudioPlayer from "react-h5-audio-player";
 import "react-h5-audio-player/lib/styles.css";
 import { useRef, useState, useEffect } from "react";
 import { connect } from "react-redux";
-import { selectedSong, pauseAllSongs, pauseActualSong } from "../actions/index";
+import { selectedSong, pauseAllSongs } from "../actions/index";
 
 const Player = ({
   getActualSong,
-  setPauseActualSong,
   allSongs,
-  actualSong,
-  sameSong,
+  actualSong
 }) => {
   const [playerActive, setPlayerActive] = useState(false);
   const [song, setSong] = useState("");
@@ -42,7 +40,6 @@ const Player = ({
       const songPrevious = allSongs.find((song) => {
         return song.id === songPreviousId;
       });
-      console.log(songPrevious);
       getActualSong(songPreviousId, allSongs);
       setSong(songPrevious.mp3SongUrl);
       setTitle(songPrevious.title);
@@ -60,9 +57,6 @@ const Player = ({
   const playSong = (actualSong) => {
     setSong(actualSong.mp3SongUrl);
   };
-  const pauseSong = (id, actualSong) => {
-    setPauseActualSong(id, actualSong);
-  };
 
   useEffect(() => {
     if (actualSong) {
@@ -70,15 +64,7 @@ const Player = ({
       setTitle(actualSong.title);
       setPlayerActive(true);
     }
-  }, [actualSong, sameSong]);
-
-  // este funca
-  useEffect(() => {
-    if (sameSong) {
-      console.log("pausedSONG");
-      player.current.audio.current.pause();
-    }
-  }, [sameSong]);
+  }, [actualSong]);
 
   return (
     <AudioPlayer
@@ -86,7 +72,7 @@ const Player = ({
       src={song}
       ref={player}
       onPlay={() => playSong}
-      onPause={() => pauseSong(actualSong.id, actualSong)}
+      onPause={() => pauseAllSongs(actualSong)}
       onClickPrevious={getPreviousSongClick}
       onClickNext={getNextSongClick}
       onEnded={getNextSongClick}
@@ -95,7 +81,6 @@ const Player = ({
       header={title}
       visibility={playerActive}
       className={playerActive && `active`}
-      // other props here
     />
   );
 };
@@ -103,14 +88,11 @@ const Player = ({
 const mapStateToProps = (state) => ({
   allSongs: state.songs.allSongs,
   actualSong: state.songs.actualSong,
-  sameSong: state.songs.sameSong,
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
     getActualSong: (id, allSongs) => dispatch(selectedSong(id, allSongs)),
-    setPauseActualSong: (id, actualSong) =>
-      dispatch(pauseActualSong(id, actualSong)),
     getAllPausedSongs: (allSongs) => dispatch(pauseAllSongs(allSongs)),
   };
 };

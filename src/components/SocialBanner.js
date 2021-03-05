@@ -1,7 +1,4 @@
 import { connect } from 'react-redux';
-
-
-
 import logoSpotify from '../assets/images/img/logo-spotify.png'
 import logoYTMusic from '../assets/images/img/logo-yt-music.png'
 import logoAppleMusic from '../assets/images/img/logo-apple-music.png'
