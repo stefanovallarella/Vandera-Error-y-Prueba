@@ -42,6 +42,10 @@ button {
     }
 }
 
+.is-hidden {
+    display: none !important;
+}
+
 .grid {
     display: grid;
     grid-gap: 60px 40px;
@@ -263,6 +267,9 @@ button {
             @include breakpoint(phone) {
                 height: 378px;
             }
+        }
+        &.is-hidden {
+            display: none;
         }
     }
 }
@@ -514,14 +521,21 @@ button {
             }
         }
         .block__img {
-            max-width: 100%;
-            left: 0;
+            mix-blend-mode: soft-light;
+            max-width: 350px;
+            left: 50%;
+            transform: translateX(-50%);
             position: absolute;
             top: 0;
             @include breakpoint(phone) {
-                max-width: 750px;
-                right: -100px;
+                transform: translateX(0);
+                max-width: 600px;
                 left: inherit;
+                right: 0;
+            }
+            @include breakpoint(desktop-lg) {
+                max-width: 750px;
+                right: 100px;
             }
         }
         .title {

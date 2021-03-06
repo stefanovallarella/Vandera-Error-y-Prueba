@@ -35,8 +35,8 @@ const Footer = ({ actualSong }) => {
                         </div>
                     </div>
                 </div>
-                <img className="block__img" src={VanderaBack} alt=""/>
             </div>
+            <img className="block__img" src={VanderaBack} alt=""/>
         </footer>
     )   
 }
