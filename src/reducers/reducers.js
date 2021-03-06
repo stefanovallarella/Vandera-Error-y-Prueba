@@ -1,9 +1,5 @@
 import {
-  EXAMPLE_TYPE,
   GET_ACTUAL_SONG,
-  GET_ALL_SONGS,
-  LISTEN_SAME_SONG,
-  PAUSE_LISTENED_SONG,
 } from "../actions/types";
 
 // Img manchas
@@ -200,11 +196,6 @@ const songsReducer = (state = initialState, action) => {
         ...state,
         actualSong: action.payload,
       };
-    /*     case PAUSE_LISTENED_SONG:
-      return {
-        ...state,
-        listenedSong: action.payload,
-      }; */
     default:
       return state;
   }

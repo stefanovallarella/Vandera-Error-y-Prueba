@@ -9,7 +9,7 @@ const SongsTitle = ({ actualSong }) => {
 
     return (
         <div className="background">
-          <h2 class="title title--border">
+          <h2 className="title title--border">
             {actualSong.title ? actualSong.title : "Error y Prueba"}
           </h2>
         </div>

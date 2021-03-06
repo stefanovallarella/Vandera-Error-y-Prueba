@@ -6,7 +6,7 @@ const Footer = ({ actualSong }) => {
         <footer id="contacto" className={`block block--footer ${actualSong && `is-player-active`} ${actualSong ? actualSong.bannerBg : "block--gradient"}`}>
             <div className="container">
                 <div className="block__content">
-                    <h4 class="title title--border">Contacto</h4>
+                    <h4 className="title title--border">Contacto</h4>
                     <ul className="block__list">
                         <li>
                             <i className="fas fa-envelope"></i>

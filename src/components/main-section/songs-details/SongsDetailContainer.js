@@ -1,7 +1,6 @@
 import { NavLink, Route, Switch } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { useEffect, useState } from 'react';
-import { AnimatedSwitch, AnimatedRoute } from 'react-router-transition';
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
 
 import Lyrics from './songs-lyrics-extras/Lyrics';

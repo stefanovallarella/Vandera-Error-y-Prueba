@@ -124,49 +124,49 @@ const LogoVandera = ({ actualSong }) => {
                 <defs>
 
                     {/* V */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='VGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='VGradient' > 
                         <stop offset="0%" style={{stopColor: colors.v, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.a, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                      {/* A */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='AGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='AGradient' > 
                         <stop offset="0%" style={{stopColor: colors.a, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.n, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                     {/* N */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='NGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='NGradient' > 
                         <stop offset="0%" style={{stopColor: colors.n, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.d, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                     {/* D */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='DGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='DGradient' > 
                         <stop offset="0%" style={{stopColor: colors.d, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.e, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                     {/* E */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='EGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='EGradient' > 
                         <stop offset="0%" style={{stopColor: colors.e, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.r, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                     {/* R */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='RGradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='RGradient' > 
                         <stop offset="0%" style={{stopColor: colors.r, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.a2, stopOpacity: 1}}>
                         </stop></stop>
                     </linearGradient>
 
                     {/* A2 */}
-                    <linearGradient   spreadmethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='A2Gradient' > 
+                    <linearGradient   spreadMethod="pad" x1="0%" y1="0%" x2="100%" y2="0%" id='A2Gradient' > 
                         <stop offset="0%" style={{stopColor: colors.a2, stopOpacity: 1}}>
                         <stop offset="100%" style={{stopColor: colors.last, stopOpacity: 1}}>
                         </stop></stop>
