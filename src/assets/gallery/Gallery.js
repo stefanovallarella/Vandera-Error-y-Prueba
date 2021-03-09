@@ -32,6 +32,7 @@ import AboutImage12 from '../images/about/12.jpg';
 import AboutImage13 from '../images/about/13.jpg';
 import AboutImage14 from '../images/about/14.jpg';
 import AboutImage15 from '../images/about/15.jpg';
+import AboutImage16 from '../images/about/16.jpg';
 
 
 const gallery = [
@@ -58,7 +59,8 @@ const gallery = [
     { media: AboutImage12, type: 'image' },
     { media: AboutImage13, type: 'image' },
     { media: AboutImage14, type: 'image' },
-    { media: AboutImage15, type: 'image' }
+    { media: AboutImage15, type: 'image' },
+    { media: AboutImage16, type: 'image' }
 ]
 
 export default gallery;
