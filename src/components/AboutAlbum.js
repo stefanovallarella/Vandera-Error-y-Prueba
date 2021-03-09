@@ -1,5 +1,5 @@
 
-import GalleryWrapper from '../components/Gallery'
+import GalleryWrapper from '../components/gallery/GalleryWrapper'
 import { connect } from 'react-redux';
 import mainM from '../assets/images/img-manchas/error-y-prueba-manchas.png';
 import VanderaFirma from '../assets/images/img/firma-vandera.png';

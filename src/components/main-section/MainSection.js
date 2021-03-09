@@ -31,9 +31,9 @@ const MainSection = ( { allSongs, actualSong, getActualSong } ) => {
                         <div className='songs'>
                             
                             <div className='overlay-playlist' >
-                                <button class="btn btn--icon-right" onClick={() => getActualSong(1, allSongs) } >
+                                <button className="btn btn--icon-right" onClick={() => getActualSong(1, allSongs) } >
                                     Escuchalo ahora 
-                                    <i class="fas fa-play"></i>
+                                    <i className="fas fa-play"></i>
                                 </button>
                             </div>
 
