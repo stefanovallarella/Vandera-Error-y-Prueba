@@ -15,6 +15,7 @@ import AboutVideo5 from '../assets/images/about/5.m4v';
 import AboutVideo6 from '../assets/images/about/6.m4v';
 import AboutVideo7 from '../assets/images/about/7.m4v';
 import AboutVideo8 from '../assets/images/about/8.m4v';
+import AboutVideo9 from '../assets/images/about/9.m4v';
 
 export const GalleryWrapper = () => {
 
@@ -65,6 +66,7 @@ export const GalleryWrapper = () => {
                 AboutVideo6,
                 AboutVideo7,
                 AboutVideo8,
+                AboutVideo9
                 ]}
             />
         </>
