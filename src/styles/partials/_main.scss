@@ -310,7 +310,7 @@ button {
                 margin-top: 92px;
             }
         }
-        &:last-child {
+        &:nth-child(5) {
             grid-column: span 2;
             height: 348px;
             @include breakpoint(phone) {
