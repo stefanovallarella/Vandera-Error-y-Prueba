@@ -2,8 +2,8 @@
 
   // ClientID & clientSecret from Vandera-error y prueba App creada en la cuenta de Stefano
   
-  const clientID = '7f91201e10604d3c8a80c877e58c15d2';
-  const clientSecret = '4de810c38f3d4f4b88bb24fe1bdbc5e9';
+  const clientID = '';
+  const clientSecret = '';
   
   //Get TOKEN
   
